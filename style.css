@@ -1,1 +1,8 @@
-body {background: rgba(214, 226, 249, 1)}
+body {
+    background: rgba(214, 226, 249, 1);
+    font-family: "Georgia", serif;
+}
+
+button {
+    font-family: "Georgia", serif;
+}
