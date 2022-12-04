@@ -9,4 +9,5 @@ button {
 
 .container {
     padding: calc(8px + 1.5625vw);
+    background: rgba(141, 177, 227, 1);
 }
