@@ -11,3 +11,9 @@ button {
     padding: calc(8px + 1.5625vw);
     background: rgba(141, 177, 227, 1);
 }
+
+.tableContainer {
+    padding: calc(8px + 1.5625vw);
+    background: rgba(141, 177, 227, 1);
+    border-spacing: 10px;
+}
