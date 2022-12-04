@@ -6,3 +6,7 @@ body {
 button {
     font-family: "Georgia", serif;
 }
+
+.container {
+    padding: calc(8px + 1.5625vw);
+}
