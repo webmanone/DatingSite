@@ -22,7 +22,7 @@ button {
     padding: calc(8px + 1.5625vw);
 }
 
-.floatTable {
+.float {
     float: left;
     margin-right:10px;
 }
