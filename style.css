@@ -2,6 +2,9 @@ body {
     background: rgba(214, 226, 249, 1);
     font-family: "Georgia", serif;
 }
+h1 {
+    text-align: center;
+}
 
 button {
     font-family: "Georgia", serif;
