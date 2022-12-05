@@ -16,6 +16,7 @@ button {
     padding: calc(8px + 1.5625vw);
     background: rgba(141, 177, 227, 1);
     border-spacing: 1em;
+    table-layout: fixed;
 }
 
 .pad {
@@ -37,4 +38,8 @@ button {
 
 .longTable {
     width: 60%;
+}
+
+.fill {
+    width: 100%;
 }
