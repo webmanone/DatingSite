@@ -15,7 +15,7 @@ button {
 .tableContainer {
     padding: calc(8px + 1.5625vw);
     background: rgba(141, 177, 227, 1);
-    border-spacing: 10px;
+    border-spacing: 1em;
 }
 
 .pad {
@@ -29,4 +29,12 @@ button {
 
 .center {
     text-align:center;
+}
+
+.shortTable {
+    width: 30%;
+}
+
+.longTable {
+    width: 60%;
 }
