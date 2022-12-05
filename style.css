@@ -7,6 +7,10 @@ button {
     font-family: "Georgia", serif;
 }
 
+td {
+    padding: 0.5em;
+}
+
 .container {
     padding: calc(8px + 1.5625vw);
     background: rgba(141, 177, 227, 1);
@@ -15,7 +19,6 @@ button {
 .tableContainer {
     padding: calc(8px + 1.5625vw);
     background: rgba(141, 177, 227, 1);
-    border-spacing: 1em;
     table-layout: fixed;
 }
 
