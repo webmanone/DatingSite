@@ -49,3 +49,7 @@ td {
 .fill {
     width: 100%;
 }
+
+.static {
+    position: static;
+}
