@@ -86,9 +86,16 @@ li a {
     display: block;
 }
 
+
+/*
+
 li a:hover:not(.active) {
     background-color: #111;
   }
+
+Was being seizury so commented out.
+
+*/
 
   .active {
     background-color: #f54242 ;
