@@ -74,6 +74,10 @@ td {
     overflow: hidden;
 }
 
+li {
+    float: left;
+}
+
 li a {
     padding: calc(8px + 1.5625vw);
     text-align: center;
