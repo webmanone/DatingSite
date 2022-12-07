@@ -1,6 +1,7 @@
 body {
     background: rgba(214, 226, 249, 1);
     font-family: "Georgia", serif;
+    margin: 0;
 }
 h1 {
     text-align: center;
@@ -60,4 +61,23 @@ td {
     padding-right: calc(8px + 1.5625vw);
     padding-left: calc(8px + 1.5625vw);
     padding-bottom: calc(8px + 1.5625vw);
+}
+
+.navbar {
+    position: fixed;
+    background-color: #333;
+    width: 100%;
+    list-style-type: none;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li a {
+    padding: calc(8px + 1.5625vw);
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    display: block;
 }
