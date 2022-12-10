@@ -47,6 +47,10 @@ td {
     width: 60%;
 }
 
+.relative {
+    position: relative;
+}
+
 .fill {
     width: 100%;
 }
