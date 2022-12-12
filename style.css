@@ -104,3 +104,14 @@ Was being seizury so commented out.
   .active {
     background-color: #f54242 ;
   }
+
+  .gridContainer {
+    display: grid;
+    grid-template-areas:
+    "header header header";
+  }
+
+  .header {
+    grid-area: header;
+    text-align: center;
+  }
