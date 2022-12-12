@@ -108,10 +108,24 @@ Was being seizury so commented out.
   .gridContainer {
     display: grid;
     grid-template-areas:
-    "header header header";
+    "header header header"
+    "about interest1 interest1"
+    "about interest2 interest2";
   }
 
   .header {
     grid-area: header;
     text-align: center;
+  }
+
+  .about {
+    grid-area: about;
+  }
+  
+  .interest1 {
+    grid-area: interest1;
+  }
+
+  .interest2 {
+    grid-area: interest2;
   }
