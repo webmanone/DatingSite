@@ -111,7 +111,8 @@ Was being seizury so commented out.
     'header header header'
     'about interest1 interest1'
     'about interest2 interest2';
-    gap: 10px;
+    row-gap: 10px;
+    column-gap: 40px;
   }
 
   .header {
@@ -129,4 +130,8 @@ Was being seizury so commented out.
 
   .interest2 {
     grid-area: interest2;
+  }
+
+  .empty {
+    grid-area: empty;
   }
