@@ -23,7 +23,6 @@ td {
 .tableContainer {
     padding: calc(8px + 1.5625vw);
     background: rgba(141, 177, 227, 1);
-    table-layout: fixed;
 }
 
 .pad {
@@ -108,9 +107,10 @@ Was being seizury so commented out.
   .gridContainer {
     display: grid;
     grid-template-areas:
-    "header header header"
-    "about interest1 interest1"
-    "about interest2 interest2";
+    'header header header header'
+    'about interest1 interest1 interest1'
+    'about interest2 interest2 interest2';
+    gap: 10px;
   }
 
   .header {
