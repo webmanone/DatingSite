@@ -123,6 +123,7 @@ Was being seizury so commented out.
   .about {
     grid-area: about;
     position: relative;
+    right: 5vw;
   }
   
   .interest1 {
@@ -135,4 +136,9 @@ Was being seizury so commented out.
 
   .empty {
     grid-area: empty;
+  }
+
+  .bio {
+    position: relative;
+    bottom: 10px;
   }
