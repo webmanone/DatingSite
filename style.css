@@ -106,11 +106,11 @@ Was being seizury so commented out.
 
   .gridContainer {
     display: grid;
-    grid-template-columns: auto min-content auto auto auto auto ;
+    grid-template-columns: auto min-content auto auto auto;
     grid-template-areas:
-    'header header header header header header'
-    '. about . interest1 interest1 . '
-    '. about . interest2 interest2 . ';
+    'header header header header header'
+    '. about . interest1 interest1'
+    '. about . interest2 interest2';
     row-gap: 10px;
     column-gap: 40px;
   }
@@ -128,10 +128,18 @@ Was being seizury so commented out.
   
   .interest1 {
     grid-area: interest1;
+    height: 60%;
+    position: relative;
+    right: 12vw;
+    top: 2vw;
   }
 
   .interest2 {
     grid-area: interest2;
+    height: 60%;
+    position: relative;
+    right: 12vw;
+    top: 1vw;
   }
 
   .empty {
