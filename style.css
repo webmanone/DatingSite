@@ -135,6 +135,7 @@ Was being seizury so commented out.
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 5vw;
   }
 
   .interest2 {
@@ -158,4 +159,9 @@ Was being seizury so commented out.
     float: left;
     background-color: aqua;
     text-align: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
   }
