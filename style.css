@@ -132,6 +132,9 @@ Was being seizury so commented out.
     position: relative;
     right: 12vw;
     top: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .interest2 {
@@ -149,4 +152,10 @@ Was being seizury so commented out.
   .bio {
     position: relative;
     bottom: 10px;
+  }
+
+  .item {
+    float: left;
+    background-color: aqua;
+    text-align: center;
   }
