@@ -112,7 +112,7 @@ Was being seizury so commented out.
     '. about . interest1 interest1'
     '. about . interest2 interest2';
     row-gap: 10px;
-    column-gap: 40px;
+    column-gap: 7vw;
   }
 
   .header {
@@ -144,7 +144,7 @@ Was being seizury so commented out.
     height: 60%;
     position: relative;
     right: 12vw;
-    top: 1vw;
+    top: 2vw;
   }
 
   .empty {
@@ -167,4 +167,8 @@ Was being seizury so commented out.
     flex-basis: 20%;
     flex-grow: 0;
     flex-shrink: 0;
+  }
+
+  .firstItem {
+    padding-left: 50px;
   }
