@@ -133,10 +133,11 @@ Was being seizury so commented out.
     right: 12vw;
     top: 2vw;
     display: flex;
-    justify-content: center;
+    flex-wrap: nowrap;
     align-items: center;
-    gap: 5vw;
-    overflow: hidden;
+    gap: 4vw;
+    overflow: scroll;
+    padding-left: 4vw;
   }
 
   .interest2 {
@@ -169,6 +170,3 @@ Was being seizury so commented out.
     flex-shrink: 0;
   }
 
-  .firstItem {
-    padding-left: 50px;
-  }
