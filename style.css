@@ -136,6 +136,7 @@ Was being seizury so commented out.
     justify-content: center;
     align-items: center;
     gap: 5vw;
+    overflow: hidden;
   }
 
   .interest2 {
@@ -163,5 +164,7 @@ Was being seizury so commented out.
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 20%;
+    flex-basis: 20%;
+    flex-grow: 0;
+    flex-shrink: 0;
   }
