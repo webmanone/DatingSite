@@ -170,3 +170,7 @@ Was being seizury so commented out.
     flex-shrink: 0;
   }
 
+.buttonSize {
+  width: 4vw;
+  height: 4vh;
+}
