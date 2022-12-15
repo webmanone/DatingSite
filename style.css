@@ -136,7 +136,7 @@ Was being seizury so commented out.
     flex-wrap: nowrap;
     align-items: center;
     gap: 4vw;
-    overflow: scroll;
+    overflow: hidden;
     padding-left: 4vw;
   }
 
