@@ -146,6 +146,12 @@ Was being seizury so commented out.
     position: relative;
     right: 12vw;
     top: 2vw;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 4vw;
+    overflow: hidden;
+    padding-left: 4vw;
   }
 
   .empty {
