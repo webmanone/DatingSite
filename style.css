@@ -109,7 +109,7 @@ Was being seizury so commented out.
     grid-template-columns: auto min-content auto auto auto;
     grid-template-areas:
     'header header header header header'
-    '. about . interest1 interest1'
+    '. about buttonLeft interest1 interest1'
     '. about . interest2 interest2';
     row-gap: 10px;
     column-gap: 7vw;
@@ -127,7 +127,6 @@ Was being seizury so commented out.
   }
   
   .interest1 {
-    grid-area: interest1;
     height: 60%;
     position: relative;
     right: 12vw;
@@ -139,6 +138,11 @@ Was being seizury so commented out.
     overflow: hidden;
     padding-left: 4vw;
   }
+
+  .interest1a {
+    grid-area: interest1;
+  }
+  
 
   .interest2 {
     grid-area: interest2;
@@ -179,4 +183,14 @@ Was being seizury so commented out.
 .buttonSize {
   width: 4vw;
   height: 4vh;
+}
+
+.buttonLeft {
+  grid-area: buttonLeft;
+  z-index: 1;
+  display: flex;
+  align-items:center;
+  position: relative;
+  right: 1vw;
+
 }
