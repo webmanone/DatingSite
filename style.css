@@ -190,6 +190,8 @@ Was being seizury so commented out.
     flex-basis: 20%;
     flex-grow: 0;
     flex-shrink: 0;
+    border-style: solid;
+    border-width: thin;
   }
 
 .buttonSize {
