@@ -141,6 +141,7 @@ Was being seizury so commented out.
     gap: 4vw;
     overflow: hidden;
     padding-left: 4vw;
+    border-style: solid;
   }
 
   .interest1a {
@@ -153,19 +154,20 @@ Was being seizury so commented out.
   position: relative;
   justify-content: center;
 }
-  .interest2 {
-    height: 150px;
-    position: relative;
-    right: 12vw;
-    top: 2vw;
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
-    gap: 4vw;
-    overflow: hidden;
-    padding-left: 4vw;
-  }
+.interest2 {
+  height: 150px;
+  position: relative;
+  right: 12vw;
+  top: 2vw;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4vw;
+  overflow: hidden;
+  padding-left: 4vw;
+  border-style: solid;
+}
 
   .empty {
     grid-area: empty;
