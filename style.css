@@ -125,6 +125,8 @@ Was being seizury so commented out.
     grid-area: about;
     position: relative;
     right: 5vw;
+    border-style: solid;
+    background-color: rgba(141, 177, 227, 1);
   }
   
   .interest1 {
@@ -172,6 +174,7 @@ Was being seizury so commented out.
   .bio {
     position: relative;
     bottom: 10px;
+    z-index: 0;
   }
 
   .item {
@@ -207,8 +210,10 @@ Was being seizury so commented out.
   float: right;
   right: 8vw;
   top: 50%;
-  
+}
 
-.space {
-  padding: 500px;
+.bottomBorder {
+  border-bottom: solid;
+  position: relative;
+  z-index: 2;
 }
