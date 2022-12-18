@@ -7,9 +7,9 @@ const leftButton=document.getElementById('leftButton');
 const rightButton=document.getElementById('rightButton');
 
 leftButton.onclick = function () {
-    document.getElementById('interest1').scrollLeft -= 20;
+    document.getElementById('interest1').scrollLeft -= 300;
 }
 
 rightButton.onclick = function () {
-    document.getElementById('interest1').scrollLeft += 20;
+    document.getElementById('interest1').scrollLeft += 300;
 }
