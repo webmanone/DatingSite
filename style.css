@@ -129,6 +129,13 @@ Was being seizury so commented out.
     background-color: rgba(141, 177, 227, 1);
   }
   
+  .interestTitle {
+    text-align: center;
+    position: relative;
+    right: 12vw;
+    top: 2vw;
+  }
+
   .interest1 {
     height: 150px;
     position: relative;
@@ -203,7 +210,7 @@ Was being seizury so commented out.
   grid-area: buttonLeft;
   z-index: 1;
   position: absolute;
-  top: 50%;
+  top: 65%;
   left: -16vw;
 }
 
@@ -213,7 +220,7 @@ Was being seizury so commented out.
   position: absolute;
   float: right;
   right: 8vw;
-  top: 50%;
+  top: 65%;
 }
 
 .bottomBorder {
