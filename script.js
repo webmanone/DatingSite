@@ -9,17 +9,17 @@ const leftButton2=document.getElementById('leftButton2');
 const rightButton2=document.getElementById('rightButton2');
 
 leftButton.onclick = function () {
-    document.getElementById('interest1').scrollLeft -= 300;
+    document.getElementById('interest1').scrollLeft -= 206;
 }
 
 rightButton.onclick = function () {
-    document.getElementById('interest1').scrollLeft += 300;
+    document.getElementById('interest1').scrollLeft += 206;
 }
 
 leftButton2.onclick = function () {
-    document.getElementById('interest2').scrollLeft -= 300;
+    document.getElementById('interest2').scrollLeft -= 206;
 }
 
 rightButton2.onclick = function () {
-    document.getElementById('interest2').scrollLeft += 300;
+    document.getElementById('interest2').scrollLeft += 206;
 }
