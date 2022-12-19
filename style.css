@@ -169,11 +169,11 @@ Was being seizury so commented out.
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  justify-content: center;
   gap: 4vw;
   overflow: hidden;
   padding-left: 4vw;
   border-style: solid;
+  scroll-behavior: smooth;
 }
 
   .empty {
