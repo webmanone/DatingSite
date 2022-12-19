@@ -199,6 +199,7 @@ Was being seizury so commented out.
     flex-shrink: 0;
     border-style: solid;
     border-width: thin;
+    padding-right: 10px;
   }
 
 .buttonSize {
