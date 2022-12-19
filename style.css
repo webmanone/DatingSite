@@ -184,6 +184,7 @@ Was being seizury so commented out.
     position: relative;
     bottom: 10px;
     z-index: 0;
+    border-spacing: 0px 1rem;
   }
 
   .item {
