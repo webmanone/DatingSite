@@ -112,13 +112,14 @@ Was being seizury so commented out.
     'header header header header header header'
     '. about . interest1 interest1 .'
     '. about . interest2 interest2 . ';
-    row-gap: 10px;
+    row-gap: 40px;
     column-gap: 7vw;
   }
 
   .header {
     grid-area: header;
     text-align: center;
+    padding-top: 50px;
   }
 
   .about {
@@ -128,20 +129,22 @@ Was being seizury so commented out.
     border-style: solid;
     border-width: medium;
     background-color: rgba(141, 177, 227, 1);
+    height: 80%;
+    width: 130%;
   }
   
   .interestTitle {
     text-align: center;
     position: relative;
-    right: 12vw;
-    top: 2vw;
+    right: 8vw;
+    top: 4vw;
   }
 
   .interest1 {
     height: 150px;
     position: relative;
-    right: 12vw;
-    top: 2vw;
+    right: 8vw;
+    top: 4vw;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
@@ -166,8 +169,8 @@ Was being seizury so commented out.
 .interest2 {
   height: 150px;
   position: relative;
-  right: 12vw;
-  top: 2vw;
+  right: 8vw;
+  top: 4vw;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -188,6 +191,8 @@ Was being seizury so commented out.
     bottom: 10px;
     z-index: 0;
     border-spacing: 0px 1rem;
+    object-fit: fill;
+    width: 100%;
   }
 
   .item {
@@ -215,8 +220,8 @@ Was being seizury so commented out.
   grid-area: buttonLeft;
   z-index: 1;
   position: absolute;
-  top: 65%;
-  left: -16vw;
+  top: 75%;
+  left: -12vw;
 }
 
 .buttonRight {
@@ -224,8 +229,8 @@ Was being seizury so commented out.
   z-index: 1;
   position: absolute;
   float: right;
-  right: 8vw;
-  top: 65%;
+  right: 4vw;
+  top: 75%;
 }
 
 .bottomBorder {
