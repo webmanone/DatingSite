@@ -126,6 +126,7 @@ Was being seizury so commented out.
     position: relative;
     right: 5vw;
     border-style: solid;
+    border-width: medium;
     background-color: rgba(141, 177, 227, 1);
   }
   
@@ -149,6 +150,7 @@ Was being seizury so commented out.
     overflow: hidden;
     padding-left: 4vw;
     border-style: solid;
+    border-width: medium;
   }
 
   .interest1a {
@@ -173,6 +175,7 @@ Was being seizury so commented out.
   overflow: hidden;
   padding-left: 4vw;
   border-style: solid;
+  border-width: medium;
   scroll-behavior: smooth;
 }
 
