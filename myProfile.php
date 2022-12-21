@@ -1,79 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="reset.css">
-<link rel="stylesheet" href="style.css">
-<title>Dating Site</title>
-</head>
-<body>
-
-
-
-    <ul class="navbar">
-        <li><a href="index.html">Home</a></li>
-        <li class="active"><a href="myProfile.html">My Profile</a></li>
-    </ul>
-
-<!-- before cssgrid
-
-<div class="pad"></div>
-
-<h1>My Profile</h1>
-
-<div>
-   
-    <div class="noBottomP">
-        <img src="https://i.imgur.com/NsutHnG.jpg" title="source: imgur.com" class="shortElement float">
-    </div>
-
-    <div class="container float longElement">
-        <p class="center">Favourite Books</p>
-        <table class="tableContainer fill center">
-            <tr>
-                <td>1984</td>
-                <td>Brave New World</td>
-                <td>The Pillars of the Earth</td>
-            </tr>
-        </table>
-    </div>
-
-</div>
-<div>
-    <div class="float noTopP">
-        <table class="tableContainer float shortElement">
-            <tr>
-                <td>Name: </td><td>John Doe</td>
-            </tr>
-            <tr>
-                <td>Age: </td><td>24</td>
-            </tr>
-            <tr>
-                <td>Gender: </td><td>Male</td>
-            </tr>
-            <tr>
-                <td>Location: </td><td>London</td>
-            </tr>
-            <tr>
-                <td>Orientation: </td><td>Straight</td>
-            </tr>
-        </table>  
-    </div>
-
-    <div class="container float longElement">
-        <p class="center">Favourite Books</p>
-        <table class="tableContainer fill center">
-            <tr>
-                <td>1984</td>
-                <td>Brave New World</td>
-                <td>The Pillars of the Earth</td>
-            </tr>
-        </table>
-    </div>
-</div>
-
-
--->
+<?php
+    include_once 'header.php'
+?>
 
 <div class="gridContainer">
     
@@ -180,7 +107,6 @@
 -->
 
 </div>
-<script src="script.js"></script>
-
-</body>
-</html>
+<?php
+    include_once 'footer.php'
+?>
