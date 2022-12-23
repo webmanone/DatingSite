@@ -3,17 +3,20 @@
 ?>
     <section class="signupForm">
     <h2>Sign Up</h2>
+    <div class="signupFormInner">
     <form action="signupInc.php" method="post">
         <input type="text" name="name" placeholder="Name...">
-        <input type="birthday" name="birthday" placeholder="Date of birth...">
-        <select name="gender" placeholder="Gender...">
+        <input type="date" name="birthday" placeholder="Date of birth...">
+        <select name="gender">
+            <option value="" disabled selected>Gender...</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
             <option value="transmale">Trans Male</option>
             <option value="transfemale">Trans Female</option>
             <option value="nonbinary">Non-Binary</option>
         </select>
-        <select name="orientation" placeholder="Orientation...">
+        <select name="orientation">
+            <option value="" disabled selected>Orientation...</option>    
             <option value="straight">Straight</option>
             <option value="gaylesbian">Gay/Lesbian</option>
             <option value="bisexual">Bisexual</option>
@@ -24,6 +27,7 @@
         <input type="password" name="pwdrepeat" placeholder="Repeat password...">
         <button type="submit" name="submit">Sign Up</button>
     </form>
+    </div>
     </section>
 
 
