@@ -267,3 +267,13 @@ input[type=submit] {
   border-radius: 4px;
   cursor: pointer;
 }
+
+input[type=date] {
+  content: none;
+}
+
+input[type="date"]:before {
+  color: lightgrey;
+  content: attr(placeholder) !important;
+  margin-right: 0.5em;
+}
