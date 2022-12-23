@@ -269,7 +269,7 @@ input[type=submit] {
 }
 
 input[type=date] {
-  content: none;
+  text-align: right;
 }
 
 input[type="date"]:before {
