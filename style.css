@@ -238,3 +238,7 @@ Was being seizury so commented out.
   position: relative;
   z-index: 2;
 }
+
+.signupForm {
+  background-color: #f2f2f2;
+}
