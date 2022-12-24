@@ -2,10 +2,11 @@
     include_once 'header.php';
 ?>
     <section class="signupForm">
-    <h2>Sign Up</h2>
+    <h2 class="pad">Sign Up</h2>
     <div class="signupFormInner">
     <form action="signupInc.php" method="post">
-        <input type="text" name="name" placeholder="Name...">
+        <input type="text" name="firstname" placeholder="First name...">
+        <input type="text" name="lastname" placeholder="Last name...">
         <input type="date" name="birthday" placeholder="Date of birth...">
         <select name="gender">
             <option value="" disabled selected>Gender...</option>
@@ -25,7 +26,7 @@
         <input type="text" name="email" placeholder="Email...">
         <input type="password" name="pwd" placeholder="Password...">
         <input type="password" name="pwdrepeat" placeholder="Repeat password...">
-        <button type="submit" name="submit">Sign Up</button>
+        <div><button type="submit" name="submit">Sign Up</button></div>
     </form>
     </div>
     </section>

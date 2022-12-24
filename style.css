@@ -241,26 +241,38 @@ Was being seizury so commented out.
 
 .signupForm {
   border-radius: 5px;
-  background-color: #f2f2f2;
+  background-color: rgba(141, 177, 227, 1);
   padding: 20px;
   position: relative;
   top: 100px;
+  width: 50%;
+  margin: auto;
+  text-align: center;
 }
 
+input {
+  font-family: "Georgia", serif;
+}
+
+select {
+  font-family: "Georgia", serif;
+  color: grey;
+}
 input[type=text], select {
-  width: 100%;
+  width: 30%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-input[type=submit] {
-  width: 100%;
-  background-color: #4CAF50;
-  color: white;
+button[type=submit] {
+  width: 20%;
+  background-color:aqua;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
@@ -269,11 +281,29 @@ input[type=submit] {
 }
 
 input[type=date] {
-  text-align: right;
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
+input[type=password] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
 input[type="date"]:before {
-  color: lightgrey;
+  color: grey;
   content: attr(placeholder) !important;
   margin-right: 0.5em;
+  font-family: "Georgia", serif;
 }
