@@ -256,9 +256,25 @@ input {
 
 select {
   font-family: "Georgia", serif;
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
   color: grey;
 }
-input[type=text], select {
+
+option:not(:first-of-type) {
+  font-family: "Georgia", serif;
+  color: black;
+}
+
+
+input[type=text] {
   width: 30%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -281,13 +297,17 @@ button[type=submit] {
 }
 
 input[type=date] {
-  width: 30%;
+  width: 32%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+input[type=date]:after {
+  content: normal;
 }
 
 input[type=password] {
