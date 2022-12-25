@@ -13,8 +13,15 @@
         <img src="https://i.imgur.com/NsutHnG.jpg" title="source: imgur.com" class="bioPic">
         
         
+        <div class="bioGrid">
+            <div class="firstName">Luke</div>
+            <div class="age">24</div>
+            <div class="gender">Male</div>
+            <div class="orientation">Straight</div>
+            <div class="location">Nottingham</div>
+        </div>
         
-            <table class="tableContainer bio">
+           <!-- <table class="tableContainer bio">
                 <tr>
                     <td>Name: </td><td>Luke</td>
                 </tr>
@@ -31,7 +38,7 @@
                     <td>Orientation: </td><td>Straight</td>
                 </tr>
             </table>  
-        
+-->
 
     </div>
 

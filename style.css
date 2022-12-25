@@ -159,6 +159,40 @@ Was being seizury so commented out.
     width: 100%;
   }
 
+  .bioGrid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-areas:
+    'firstName age gender'
+    'orientation location .';
+    row-gap: 4px;
+    column-gap: 7px;
+    place-self: center;
+    margin: auto;
+    width: 90%;
+    position: relative;
+    top: 10px;
+  }
+
+  .firstName {
+    grid-area: firstName;
+  }
+
+  .age {
+    grid-area: age;
+  }
+
+  .gender {
+    grid-area: gender;
+  }
+
+  .orientation {
+    grid-area: orientation;
+  }
+
+  .location {
+    grid-area: location;
+  }
 
   .interestTitle {
     text-align: center;
