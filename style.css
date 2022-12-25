@@ -248,6 +248,8 @@ Was being seizury so commented out.
   width: 50%;
   margin: auto;
   text-align: center;
+  border-style: solid;
+  border-width: medium;
 }
 
 input {
@@ -256,7 +258,7 @@ input {
 
 select {
   font-family: "Georgia", serif;
-  width: 30%;
+  width: 20%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
