@@ -10,7 +10,7 @@
 
     <div class="about">
         
-        <img src="https://i.imgur.com/NsutHnG.jpg" title="source: imgur.com" class=" fill bottomBorder">
+        <img src="https://i.imgur.com/NsutHnG.jpg" title="source: imgur.com" class="bioPic">
         
         
         
