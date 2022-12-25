@@ -15,6 +15,10 @@ td {
     padding: 0.5em;
 }
 
+li:hover {
+  background-color: darkblue;
+}
+
 .container {
     padding: calc(8px + 1.5625vw);
     background: rgba(141, 177, 227, 1);
