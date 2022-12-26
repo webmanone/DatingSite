@@ -170,6 +170,8 @@ Was being seizury so commented out.
     width: 100%;
     position: relative;
     top: 15px;
+    column-gap: 2px;
+    row-gap: 2px;
   }
 
   .firstName {
@@ -178,6 +180,7 @@ Was being seizury so commented out.
     border-width: thin;
     text-align: center;
     padding: 15px;
+    border-radius: 20px;
   }
 
   .age {
@@ -186,6 +189,7 @@ Was being seizury so commented out.
     border-width: thin;
     text-align: center;
     padding: 15px;
+    border-radius: 20px;
   }
 
   .gender {
@@ -194,6 +198,7 @@ Was being seizury so commented out.
     border-width: thin;
     text-align: center;
     padding: 15px;
+    border-radius: 20px;
   }
 
   .orientation {
@@ -202,6 +207,7 @@ Was being seizury so commented out.
     border-width: thin;
     text-align: center;
     padding: 15px;
+    border-radius: 20px;
   }
 
   .location {
@@ -210,6 +216,7 @@ Was being seizury so commented out.
     border-width: thin;
     text-align: center;
     padding: 15px;
+    border-radius: 20px;
   }
 
   .interestTitle {
@@ -233,6 +240,7 @@ Was being seizury so commented out.
     padding-left: 4vw;
     border-style: solid;
     border-width: medium;
+    border-radius: 5px;
   }
 
   .interest1a {
@@ -259,6 +267,7 @@ Was being seizury so commented out.
   border-style: solid;
   border-width: medium;
   scroll-behavior: smooth;
+  border-radius: 5px;
 }
 
   .empty {
@@ -279,6 +288,7 @@ Was being seizury so commented out.
     border-style: solid;
     border-width: thin;
     padding-right: 10px;
+    border-radius: 50px;
   }
 
 .buttonSize {

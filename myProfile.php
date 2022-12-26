@@ -5,7 +5,7 @@
 <div class="gridContainer">
     
     <div class="header"><div class="pad"></div><h1>
-        My Profile
+        Luke's Profile
     </h1></div>
 
     <div class="about">
