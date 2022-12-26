@@ -1,8 +1,7 @@
 <?php
     include_once 'header.php';
 ?>
-    <div class="pad"></div>
-    
+    <br><br><br><br><br><br>
     
     <h1>Dating Site</h1>
 
