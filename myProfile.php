@@ -14,11 +14,11 @@
         
         
         <div class="bioGrid">
-            <div class="firstName">Luke</div>
-            <div class="age">24</div>
-            <div class="gender">Male</div>
-            <div class="orientation">Straight</div>
-            <div class="location">Nottingham</div>
+            <div class="firstName bioItem">Luke</div>
+            <div class="age bioItem">24</div>
+            <div class="gender bioItem">Male</div>
+            <div class="orientation bioItem">Straight</div>
+            <div class="location bioItem">Nottingham</div>
         </div>
         
            <!-- <table class="tableContainer bio">

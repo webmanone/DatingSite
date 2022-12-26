@@ -136,7 +136,7 @@ Was being seizury so commented out.
     background-color: rgba(141, 177, 227, 1);
     height: 90%;
     width: 130%;
-    border-radius: 5px;
+    border-radius: 15px;
   }
   
   .bioPic {
@@ -148,6 +148,7 @@ Was being seizury so commented out.
     top: 10px;
     border-style: solid;
     border-width: medium;
+    border-radius: 5000px;
   }
 
   .bio {
@@ -169,54 +170,38 @@ Was being seizury so commented out.
     margin: auto;
     width: 100%;
     position: relative;
-    top: 15px;
-    column-gap: 2px;
-    row-gap: 2px;
+    top: 40px;
+    column-gap: 3px;
+    row-gap: 10px;
+  }
+
+  .bioItem {
+    border-style: solid;
+    border-width: thin;
+    text-align: center;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: aqua;
   }
 
   .firstName {
     grid-area: firstName;
-    border-style: solid;
-    border-width: thin;
-    text-align: center;
-    padding: 15px;
-    border-radius: 20px;
   }
 
   .age {
     grid-area: age;
-    border-style: solid;
-    border-width: thin;
-    text-align: center;
-    padding: 15px;
-    border-radius: 20px;
   }
 
   .gender {
     grid-area: gender;
-    border-style: solid;
-    border-width: thin;
-    text-align: center;
-    padding: 15px;
-    border-radius: 20px;
   }
 
   .orientation {
     grid-area: orientation;
-    border-style: solid;
-    border-width: thin;
-    text-align: center;
-    padding: 15px;
-    border-radius: 20px;
   }
 
   .location {
     grid-area: location;
-    border-style: solid;
-    border-width: thin;
-    text-align: center;
-    padding: 15px;
-    border-radius: 20px;
   }
 
   .interestTitle {
@@ -240,7 +225,7 @@ Was being seizury so commented out.
     padding-left: 4vw;
     border-style: solid;
     border-width: medium;
-    border-radius: 5px;
+    border-radius: 15px;
   }
 
   .interest1a {
@@ -267,7 +252,7 @@ Was being seizury so commented out.
   border-style: solid;
   border-width: medium;
   scroll-behavior: smooth;
-  border-radius: 5px;
+  border-radius: 15px;
 }
 
   .empty {
