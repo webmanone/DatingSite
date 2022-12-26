@@ -161,37 +161,55 @@ Was being seizury so commented out.
 
   .bioGrid {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto auto auto;
     grid-template-areas:
-    'firstName age gender'
-    'orientation location .';
-    row-gap: 4px;
-    column-gap: 7px;
+    'firstName firstName age age gender gender'
+    'orientation orientation orientation location location location';
     place-self: center;
     margin: auto;
-    width: 90%;
+    width: 100%;
     position: relative;
-    top: 10px;
+    top: 15px;
   }
 
   .firstName {
     grid-area: firstName;
+    border-style: solid;
+    border-width: thin;
+    text-align: center;
+    padding: 15px;
   }
 
   .age {
     grid-area: age;
+    border-style: solid;
+    border-width: thin;
+    text-align: center;
+    padding: 15px;
   }
 
   .gender {
     grid-area: gender;
+    border-style: solid;
+    border-width: thin;
+    text-align: center;
+    padding: 15px;
   }
 
   .orientation {
     grid-area: orientation;
+    border-style: solid;
+    border-width: thin;
+    text-align: center;
+    padding: 15px;
   }
 
   .location {
     grid-area: location;
+    border-style: solid;
+    border-width: thin;
+    text-align: center;
+    padding: 15px;
   }
 
   .interestTitle {
