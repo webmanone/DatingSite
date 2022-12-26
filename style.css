@@ -319,15 +319,15 @@ Was being seizury so commented out.
 
 input {
   font-family: "Georgia", serif;
+  border: 1px solid #000;
 }
 
 select {
   font-family: "Georgia", serif;
-  width: 20%;
+  width: 30%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
   margin-left: auto;
@@ -346,7 +346,17 @@ input[type=text] {
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input[type=tel] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
   border-radius: 4px;
   box-sizing: border-box;
   margin-left: auto;
@@ -358,17 +368,15 @@ button[type=submit] {
   background-color:aqua;
   padding: 14px 20px;
   margin: 8px 0;
-  border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
 input[type=date] {
-  width: 32%;
+  width: 30%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -382,7 +390,6 @@ input[type=password] {
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
 }
