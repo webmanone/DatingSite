@@ -372,6 +372,7 @@ button[type=submit] {
   cursor: pointer;
 }
 
+
 input[type=date] {
   width: 30%;
   padding: 12px 20px;
@@ -379,11 +380,16 @@ input[type=date] {
   display: inline-block;
   border-radius: 4px;
   box-sizing: border-box;
+  font-family: "Georgia", serif;
 }
 
-input[type=date]:after {
-  content: normal;
+
+input[type="date"]:before {
+  color: grey;
+  margin-right: 0.5em;
+  font-family: "Georgia", serif;
 }
+
 
 input[type=password] {
   width: 30%;
@@ -392,12 +398,4 @@ input[type=password] {
   display: inline-block;
   border-radius: 4px;
   box-sizing: border-box;
-}
-
-
-input[type="date"]:before {
-  color: grey;
-  content: attr(placeholder) !important;
-  margin-right: 0.5em;
-  font-family: "Georgia", serif;
 }

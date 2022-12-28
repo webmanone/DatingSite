@@ -25,7 +25,7 @@
                     </select>
                 </div>
                 <div>
-                    <input type="date" name="birthday" placeholder="Date of birth:">
+                    <input type="text" name="birthday" placeholder="Date of birth..." id="birthday" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}">
                     <input type="text" name="location" placeholder="Location...">
                 </div>
                 <div>
