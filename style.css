@@ -332,11 +332,18 @@ select {
   box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
+  border: 1px solid #000; 
+}
+
+select:required:invalid {
   color: grey;
 }
 
-option:not(:first-of-type) {
-  font-family: "Georgia", serif;
+option[value=""][disabled]{
+  color: grey;
+}
+
+option {
   color: black;
 }
 

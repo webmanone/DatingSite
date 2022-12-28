@@ -8,7 +8,7 @@
                 <input type="text" name="firstname" placeholder="First name...">
                 <input type="text" name="lastname" placeholder="Last name...">
                 <div>
-                    <select name="gender">
+                    <select required name="gender">
                         <option value="" disabled selected>Gender...</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
@@ -16,7 +16,7 @@
                         <option value="transfemale">Trans Female</option>
                         <option value="nonbinary">Non-Binary</option>
                     </select>
-                    <select name="orientation">
+                    <select required name="orientation">
                         <option value="" disabled selected>Orientation...</option>    
                         <option value="straight">Straight</option>
                         <option value="gaylesbian">Gay/Lesbian</option>
