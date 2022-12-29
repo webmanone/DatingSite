@@ -4,7 +4,7 @@
     <section class="signupForm">
         <h2 class="pad">Sign Up</h2>
         <div class="signupFormInner">
-            <form action="signupInc.php" method="post">
+            <form action="includes/signupInc.php" method="post">
                 <input type="text" name="firstname" placeholder="First name...">
                 <input type="text" name="lastname" placeholder="Last name...">
                 <div>
@@ -30,7 +30,7 @@
                 </div>
                 <div>
                     <input type="text" name="email" placeholder="Email...">
-                    <input type="tel" name="phone" placeholder="Phone Number..." pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                    <input type="tel" name="phone" placeholder="Phone Number..." pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required>
                 </div>
                 <div>
                     <input type="password" name="pwd" placeholder="Password...">

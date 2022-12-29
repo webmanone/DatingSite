@@ -4,7 +4,7 @@
     <section class="signupForm">
         <h2 class="pad">Log In</h2>
         <div class="signupFormInner">
-            <form action="loginInc.php" method="post">
+            <form action="includes/loginInc.php" method="post">
                 <div>
                     <input type="text" name="emailOrNumber" placeholder="Email/Phone Number...">
                 </div>
