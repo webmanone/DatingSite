@@ -22,3 +22,13 @@ function invalidEmail($email) {
     return $result;
 }
 
+function invalidNumber($phone) {
+    $result;
+    if (!strlen($phone) === 10){
+        $result = true;
+    }
+    else {
+        $result = false;
+    }
+    return $result;
+}
