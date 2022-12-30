@@ -13,7 +13,7 @@ function emptyInputSignup($firstName, $lastName, $gender, $orientation, $birthda
 
 function invalidEmail($email) {
     $result;
-    if (!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i"), $email){
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
         $result = true;
     }
     else {
@@ -21,3 +21,4 @@ function invalidEmail($email) {
     }
     return $result;
 }
+
