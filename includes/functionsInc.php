@@ -67,3 +67,20 @@ function userExists($conn, $email, $phone) {
 
     mysqli_stmt_close($stmt);
 }
+
+function createUser($conn, $firstName, $lastName, $gender, $orientation, $birthday, $location, $email, $phone, $pwd) {
+    $sql = "INSERT INTO users (usersFirstname, usersLastname, usersGender, usersOrientation, usersDob, usersLocation, usersEmail, usersPhone, usersPwd) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
+    $stmt = mysqli_stmt_init($conn)
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../signup.php?error=stmtfailed");  
+        exit(); 
+    }
+
+    $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
+
+    mysqli_stmt_bind_param($stmt, "sssssssss", $firstName, $lastName, $gender, $orientation, $birthday, $location, $email, $phone, $hashedPwd);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header("location: ../signup.php?error=none");  
+    exit(); 
+}
