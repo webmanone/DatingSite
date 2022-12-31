@@ -37,7 +37,7 @@ if (isset($_POST["submit"])) {
     }
 
     if (userExists($conn, $email, $phone) !== false) {
-        header("location: ../signup.php?error=emailtaken");  
+        header("location: ../signup.php?error=userexists");  
         exit();  
     }
 
