@@ -43,3 +43,7 @@ function pwdMatch($pwd, $pwdRepeat) {
     }
     return $result;
 }
+
+function userExists($conn, $email, $phone) {
+    $sql = "SELECT * FROM users WHERE usersEmail = ? OR usersPhone = ?;";
+}
