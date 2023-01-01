@@ -9,7 +9,7 @@ if (isset($_POST["submit"])) {
     $birthday = $_POST["birthday"];
     $location = $_POST["location"];
     $email = $_POST["email"];
-    $phone = (preg_replace('/[^0-9]/'), '', $_POST["phone"]);
+    $phone = /*(preg_replace('/[^0-9]/'), '',*/ $_POST["phone"];
     $pwd = $_POST["pwd"];
     $pwdRepeat = $_POST["pwdrepeat"];
 
