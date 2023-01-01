@@ -41,8 +41,34 @@
                 </div>
             </form>
         </div>
-    </section>
 
+        <?php
+            if (isset($_GET["error"])) {
+                if ($_GET["error"] == "emptyinput") {
+                    echo "<p>Please fill in all required fields.</p>";
+                }
+                else if ($_GET["error"] == "invalidemail") {
+                    echo "<p>Please enter a valid email.</p>";
+                }
+                else if ($_GET["error"] == "invalidnumber") {
+                    echo "<p>Please enter a valid phone number.</p>";
+                }
+                else if ($_GET["error"] == "invalidpasswords") {
+                    echo "<p>Password and Repeat Password fields don't match.</p>";
+                }
+                else if ($_GET["error"] == "userexists") {
+                    echo "<p>An account already exists with this email or phone number. Please try again.</p>";
+                }
+                else if ($_GET["error"] == "stmtfailed") {
+                    echo "<p>Something went wrong, please try again.</p>";
+                }
+                else if ($_GET["error"] == "none") {
+                    echo "<p>Sign up successful. Welcome to the dating site!</p>";
+                }
+            }
+        ?>
+
+    </section>
 
 <?php
     include_once 'footer.php';
