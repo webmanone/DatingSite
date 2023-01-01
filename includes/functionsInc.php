@@ -24,7 +24,7 @@ function invalidEmail($email) {
 
 function invalidNumber($phone) {
     $result;
-    if (!strlen($phone) === 10){
+    if (!strlen($phone) === 11){
         $result = true;
     }
     else {
