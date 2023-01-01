@@ -46,7 +46,7 @@ function pwdMatch($pwd, $pwdRepeat) {
 
 function userExists($conn, $email, $phone) {
     $sql = "SELECT * FROM users WHERE usersEmail = ? OR usersPhone = ?;";
-    $stmt = mysqli_stmt_init($conn)
+    $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: ../signup.php?error=stmtfailed");  
         exit(); 
@@ -70,7 +70,7 @@ function userExists($conn, $email, $phone) {
 
 function createUser($conn, $firstName, $lastName, $gender, $orientation, $birthday, $location, $email, $phone, $pwd) {
     $sql = "INSERT INTO users (usersFirstname, usersLastname, usersGender, usersOrientation, usersDob, usersLocation, usersEmail, usersPhone, usersPwd) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
-    $stmt = mysqli_stmt_init($conn)
+    $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: ../signup.php?error=stmtfailed");  
         exit(); 
