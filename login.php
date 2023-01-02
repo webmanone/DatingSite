@@ -6,7 +6,7 @@
         <div class="signupFormInner">
             <form action="includes/loginInc.php" method="post">
                 <div>
-                    <input type="text" name="emailOrNumber" placeholder="Email/Phone Number...">
+                    <input type="text" name="uid" placeholder="Email/Phone Number...">
                 </div>
                 <div>
                     <input type="password" name="pwd" placeholder="Password...">
