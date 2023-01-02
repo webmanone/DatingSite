@@ -95,3 +95,28 @@ function emptyInputLogin($username, $pwd) {
     }
     return $result;
 }
+
+function loginUser($conn, $username, $pwd) {
+    $userExists = userExists($conn, $email, $email);
+
+    if ($userExists === false) {
+        header("location: ../login.php?error=wronglogin");
+        exit();
+    }
+
+    $pwdHashed = $userExists["usersPwd"];
+    $checkPwd = password_verify($pwd, $pwdHashed);
+
+    if ($checkPwd === false) {
+        header("location: ../login.php?error=wronglogin");
+        exit();
+    }
+    else if ($checkedPwd === true) {
+        session_start();
+        $_SESSION["userid"] = $userExists["usersId"];
+        $_SESSION["userFirstname"] = $userExists["usersFirstname"];
+        //Can add more here later
+        header("location: ../index.php");
+        exit();
+    }
+}
