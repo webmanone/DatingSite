@@ -16,6 +16,18 @@
                 </div>
             </form>
         </div>
+
+        <?php
+            if (isset($_GET["error"])) {
+                if ($_GET["error"] == "emptyinput") {
+                    echo "<p>Please fill in all required fields.</p>";
+                }
+                else if ($_GET["error"] == "wronglogin") {
+                    echo "<p>Incorrect login. Please try again.</p>";
+                }
+            }
+        ?>
+
     </section>
 
 
