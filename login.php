@@ -25,6 +25,9 @@
                 else if ($_GET["error"] == "wronglogin") {
                     echo "<p>Incorrect login. Please try again.</p>";
                 }
+                else if ($_GET["error"] == "wrongpassword") {
+                    echo "<p>Incorrect password. Please try again.</p>";
+                }
             }
         ?>
 
