@@ -97,7 +97,7 @@ function emptyInputLogin($username, $pwd) {
 }
 
 function loginUser($conn, $username, $pwd) {
-    $userExists = userExists($conn, $email, $email);
+    $userExists = userExists($conn, $username, $username);
 
     if ($userExists === false) {
         header("location: ../login.php?error=wronglogin");
@@ -111,7 +111,7 @@ function loginUser($conn, $username, $pwd) {
         header("location: ../login.php?error=wrongpassword");
         exit();
     }
-    else if ($checkedPwd === true) {
+    else if ($checkPwd === true) {
         session_start();
         $_SESSION["userid"] = $userExists["usersId"];
         $_SESSION["userFirstname"] = $userExists["usersFirstname"];
