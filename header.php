@@ -13,8 +13,16 @@
     <ul>
         <li><a href="index.php">Home</a></li>
         <li><a href="myProfile.php">My Profile</a></li>
-        <li><a href="login.php">Log in</a></li>
-        <li><a href="signup.php">Sign up</a></li>
+        <?php
+            if (isset($_SESSION["userid"])) {
+                echo "<li><a href="userProfile.php">User Profile Page</a></li>";
+                echo "<li><a href="logout.php">Sign up</a></li>";
+            }
+            else {
+                echo "<li><a href="login.php">Log in</a></li>";
+                echo "<li><a href="signup.php">Sign up</a></li>";
+            }
+        ?>
     </ul>
 </nav>    
 
