@@ -84,3 +84,14 @@ function createUser($conn, $firstName, $lastName, $gender, $orientation, $birthd
     header("location: ../signup.php?error=none");  
     exit(); 
 }
+
+function emptyInputLogin($username, $pwd) {
+    $result;
+    if (empty($username) || empty($pwd)){
+        $result = true;
+    }
+    else {
+        $result = false; 
+    }
+    return $result;
+}
