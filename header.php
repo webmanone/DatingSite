@@ -21,7 +21,7 @@
         <?php
             if (isset($_SESSION["userid"])) {
                 echo "<li><a href='userProfile.php'>User Profile Page</a></li>";
-                echo "<li><a href='logout.php'>Log Out</a></li>";
+                echo "<li><a href='includes/logoutInc.php'>Log Out</a></li>";
             }
             else {
                 echo "<li><a href='login.php'>Log in</a></li>";
