@@ -116,7 +116,10 @@ function loginUser($conn, $username, $pwd) {
         $_SESSION["userid"] = $userExists["usersId"];
         $_SESSION["userFirstname"] = $userExists["usersFirstname"];
         $_SESSION["userLastname"] = $userExists["usersLastname"];
-        //Can add more here later
+        $_SESSION["userGender"] = $userExists["usersGender"];
+        $_SESSION["userOrientation"] = $userExists["usersOrientation"];
+        $_SESSION["userDob"] = $userExists["usersDob"];
+        $_SESSION["userLocation"] = $userExists["usersLocation"];
         header("location: ../index.php");
         exit();
     }

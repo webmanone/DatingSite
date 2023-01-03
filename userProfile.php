@@ -12,15 +12,15 @@
 
     <div class="about">
         
-        <img src="https://i.imgur.com/NsutHnG.jpg" title="source: imgur.com" class="bioPic">
+        <img src="images/emptyProfile.png" class="bioPic">
         
         
         <div class="bioGrid">
-            <div class="firstName bioItem">Luke</div>
-            <div class="age bioItem">24</div>
-            <div class="gender bioItem">Male</div>
-            <div class="orientation bioItem">Straight</div>
-            <div class="location bioItem">Nottingham</div>
+            <div class="firstName bioItem"><?php echo $_SESSION["userFirstname"]?></div>
+            <div class="age bioItem"><?php echo $_SESSION["userDob"]?></div>
+            <div class="gender bioItem"><?php echo $_SESSION["userGender"]?></div>
+            <div class="orientation bioItem"><?php echo $_SESSION["userOrientation"]?></div>
+            <div class="location bioItem"><?php echo $_SESSION["userLocation"]?></div>
         </div>
         
            <!-- <table class="tableContainer bio">
