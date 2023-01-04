@@ -2,7 +2,9 @@ body {
     background: rgba(214, 226, 249, 1);
     font-family: "Georgia", serif;
     margin: 0;
+    min-height: 100vh;
 }
+
 h1 {
     text-align: center;
 }
@@ -112,12 +114,13 @@ Was being seizury so commented out.
   .gridContainer {
     display: grid;
     grid-template-columns: auto min-content auto auto auto auto;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto auto auto auto;
     grid-template-areas:
     'header header header header header header'
-    '. about . interest1 interest1 .'
-    '. about . interest2 interest2 . ';
-    row-gap: 40px;
+    '. about buttonLeft1 interest1 interest1 buttonRight1'
+    '. about buttonLeft2 interest2 interest2 buttonRight2 '
+    '. about buttonLeft3 interest3 interest3 buttonRight3 ';
+    row-gap: 10px;
     column-gap: 7vw;
   }
 
@@ -134,7 +137,7 @@ Was being seizury so commented out.
     border-style: solid;
     border-width: medium;
     background-color: rgba(141, 177, 227, 1);
-    height: 90%;
+    height: 600px;
     width: 130%;
     border-radius: 15px;
   }
@@ -161,6 +164,52 @@ Was being seizury so commented out.
     object-fit: fill;
     width: 100%;
   }
+
+  .interestsGrid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-areas:
+    'books videogames anime'
+    'sports movies tvshows';
+    place-self: center;
+    margin: auto;
+    width: 100%;
+    position: absolute;
+    top: 450px;
+    column-gap: 3px;
+    row-gap: 10px;
+  }
+
+.interestGridTitle {
+  position: relative;
+  text-align: center;
+  top: 10vh;
+}
+
+  .books {
+    grid-area: books;
+  }
+
+  .videogames {
+    grid-area: videogames;
+  }
+
+  .anime {
+    grid-area: anime;
+  }
+
+  .sports {
+    grid-area: sports;
+  }
+
+  .movies {
+    grid-area: movies;
+  }
+
+  .tvshows {
+    grid-area: tvshows;
+  }
+
 
   .bioGrid {
     display: grid;
@@ -210,14 +259,12 @@ Was being seizury so commented out.
     text-align: center;
     position: relative;
     right: 8vw;
-    top: 4vw;
   }
 
   .interest1 {
-    height: 150px;
+    height: 80px;
     position: relative;
     right: 8vw;
-    top: 4vw;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
@@ -239,12 +286,34 @@ Was being seizury so commented out.
   grid-area: interest2;
   position: relative;
   justify-content: center;
+  bottom: 1vw;
 }
 .interest2 {
-  height: 150px;
+  height: 80px;
   position: relative;
   right: 8vw;
-  top: 4vw;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 4vw;
+  overflow: hidden;
+  padding-left: 4vw;
+  border-style: solid;
+  border-width: medium;
+  scroll-behavior: smooth;
+  border-radius: 15px;
+}
+
+.interest3a{
+  grid-area: interest3;
+  position: relative;
+  justify-content: center;
+  bottom: 2vw;
+}
+.interest3 {
+  height: 80px;
+  position: relative;
+  right: 8vw;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -283,21 +352,58 @@ Was being seizury so commented out.
   height: 4vh;
 }
 
-.buttonLeft {
-  grid-area: buttonLeft;
+.buttonLeft1 {
+  grid-area: buttonLeft1;
   z-index: 1;
   position: absolute;
-  top: 75%;
   left: -12vw;
+  top: 38%;
+
 }
 
-.buttonRight {
+.buttonLeft2 {
+  grid-area: buttonLeft2;
+  z-index: 1;
+  position: absolute;
+  left: -12vw;
+  top: 38%;
+
+}
+
+.buttonLeft3 {
+  grid-area: buttonLeft3;
+  z-index: 1;
+  position: absolute;
+  left: -12vw;
+  top: 38%;
+}
+
+
+.buttonRight1 {
   grid-area: buttonRight;
   z-index: 1;
   position: absolute;
   float: right;
   right: 4vw;
-  top: 75%;
+  top: 38%;
+}
+
+.buttonRight2 {
+  grid-area: buttonRight;
+  z-index: 1;
+  position: absolute;
+  float: right;
+  right: 4vw;
+  top: 38%;
+}
+
+.buttonRight3 {
+  grid-area: buttonRight;
+  z-index: 1;
+  position: absolute;
+  float: right;
+  right: 4vw;
+  top: 38%;
 }
 
 .bottomBorder {

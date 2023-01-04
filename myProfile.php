@@ -21,6 +21,16 @@
             <div class="location bioItem">Nottingham</div>
         </div>
         
+        <p class="interestGridTitle">Interests</p>
+        <div class="interestsGrid">
+            <div class="interestBooks bioItem">Books</div>
+            <div class="interestVideogames bioItem">Video Games</div>
+            <div class="interestAnime bioItem">Anime</div>
+            <div class="interestSports bioItem">Sports</div>
+            <div class="interestMovies bioItem">Movies</div>
+            <div class="interestTvshows bioItem">TV Shows</div>
+        </div>
+        
            <!-- <table class="tableContainer bio">
                 <tr>
                     <td>Name: </td><td>Luke</td>
@@ -58,10 +68,10 @@
 
 <div class="interest1a">
    
-    <div class="buttonLeft">
+    <div class="buttonLeft1">
         <img class="buttonSize"src="Images/leftButton.svg" alt="Left" id="leftButton">    
     </div>
-    <div class="buttonRight">
+    <div class="buttonRight1">
         <img class="buttonSize" src="Images/rightButton.svg" alt="Right" id="rightButton">
     </div>
 
@@ -81,10 +91,10 @@
     
 <div class="interest2a">
 
-    <div class="buttonLeft">
+    <div class="buttonLeft2">
         <img class="buttonSize"src="Images/leftButton.svg" alt="Left" id="leftButton2">    
     </div>
-    <div class="buttonRight">
+    <div class="buttonRight2">
         <img class="buttonSize" src="Images/rightButton.svg" alt="Right" id="rightButton2">
     </div>
 
@@ -98,6 +108,27 @@
     <div class="item">Rocket League</div>
     <div class="item">Skyrim</div>
 </div>
+</div>
+
+<div class="interest3a">
+
+    <div class="buttonLeft3">
+        <img class="buttonSize"src="Images/leftButton.svg" alt="Left" id="leftButton3">    
+    </div>
+    <div class="buttonRight3">
+        <img class="buttonSize" src="Images/rightButton.svg" alt="Right" id="rightButton3">
+    </div>
+
+    <p class="interestTitle">Anime</p>
+
+    <div class="interest3 container" id="interest3">
+        <div class="item">Chainsaw Man</div>
+        <div class="item">Attack on Titan</div>
+        <div class="item">Hunter x Hunter</div>
+        <div class="item">Spy x Family</div>
+        <div class="item">Death Note</div>
+        <div class="item">Jujutsu Kaisen</div>
+    </div>
 </div>
 
 <!--
