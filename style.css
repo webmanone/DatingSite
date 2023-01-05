@@ -514,3 +514,11 @@ input[type=password] {
   border-radius: 4px;
   box-sizing: border-box;
 }
+
+.capitaliseFirst {
+  text-transform: lowercase;
+}
+
+.capitaliseFirst::first-letter {
+  text-transform: uppercase;
+}
