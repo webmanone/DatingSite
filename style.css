@@ -129,21 +129,9 @@ Was being seizury so commented out.
     text-align: center;
     padding-top: 50px;
   }
-
-  .about {
-    grid-area: about;
-    position: relative;
-    right: 5vw;
-    border-style: solid;
-    border-width: medium;
-    background-color: rgba(141, 177, 227, 1);
-    height: 600px;
-    width: 130%;
-    border-radius: 15px;
-  }
   
   .bioPic {
-    width: 80%;
+    width: 50%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -233,6 +221,8 @@ Was being seizury so commented out.
     padding: 15px;
     border-radius: 20px;
     background-color: aqua;
+    justify-content: space-between;
+    margin: 10px
   }
 
   .firstName {
@@ -521,4 +511,44 @@ input[type=password] {
 
 .capitaliseFirst::first-letter {
   text-transform: uppercase;
+}
+
+.userGridContainer {
+  display: grid;
+  grid-template-columns: min-content auto auto;
+  grid-template-areas:
+  'header header header'
+  'about interestsContainer interestsContainer '
+  'interestsBox interestsContainer interestsContainer';
+  row-gap: 10vh;
+  column-gap: 15vw;
+}
+
+.about {
+  grid-area: about;
+  position: relative;
+  border-style: solid;
+  border-width: medium;
+  background-color: rgba(141, 177, 227, 1);
+  height: 120%;
+  width: 80%;
+  border-radius: 15px;
+  left: 4vw;
+}
+
+.interestsBox {
+  grid-area: interestsBox;
+  position: relative;
+  border-style: solid;
+  border-width: medium;
+  background-color: rgba(141, 177, 227, 1);
+  height: 120%;
+  width: 100%;
+  border-radius: 15px;
+  left: 4vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-self: center;
+
 }

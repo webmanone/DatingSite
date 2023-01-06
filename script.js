@@ -33,8 +33,9 @@ leftButton3.onclick = function () {
 rightButton3.onclick = function () {
     document.getElementById('interest3').scrollLeft += 218;
 }
-   
+   /*
     const ageContainer = document.getElementById('userDob');
     const dob = ageContainer.textContent;
 
     console.log(dob);
+    */

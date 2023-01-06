@@ -2,7 +2,7 @@
     include_once 'header.php';
 ?>
 
-<div class="gridContainer">
+<div class="userGridContainer">
 
 <div class="header"><div class="pad"></div><h1>
     <?php
@@ -25,8 +25,17 @@
 
     </div>
 
-    <section class="addInterests">
-        <p>Add interests:    
+    <div class="interestsBox">
+        <div class="bioItem">Books</div>
+        <div class="bioItem">Video Games</div>
+        <div class="bioItem">Anime</div>
+        <div class="bioItem">Sports</div>
+        <div class="bioItem">Movies</div>
+        <div class="bioItem">TV Shows</div>
+    </div>
+
+    <section class="interestsContainer">
+        <p>Add interests: </p>
 
 
     </section>
