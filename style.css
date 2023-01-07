@@ -221,8 +221,8 @@ Was being seizury so commented out.
     padding: 15px;
     border-radius: 20px;
     background-color: aqua;
-    justify-content: space-between;
-    margin: 10px
+    margin: 5px;
+    flex: max-content;
   }
 
   .firstName {
