@@ -17,7 +17,13 @@
         
         <div class="bioGrid">
             <div class="firstName bioItem capitaliseFirst"><?php echo $_SESSION["userFirstname"]?></div>
-            <div class="age bioItem" id="userDob"><?php echo $_SESSION["userDob"]?></div>
+            <div class="age bioItem" id="userDob">
+                <?php 
+                    $dob = $_SESSION["userDob"];
+                    $age = floor((time() - strtotime($dob)) / (60 * 60 * 24 * 365));
+                    echo $age;
+                ?>
+            </div>
             <div class="gender bioItem capitaliseFirst"><?php echo $_SESSION["userGender"]?></div>
             <div class="orientation bioItem capitaliseFirst"><?php echo $_SESSION["userOrientation"]?></div>
             <div class="location bioItem capitaliseFirst"><?php echo $_SESSION["userLocation"]?></div>
