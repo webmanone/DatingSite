@@ -541,6 +541,7 @@ input[type=password] {
   position: relative;
   grid-area: interestsWrapper;
   left: 4vw;
+  bottom: 5vh;
 }
 
 .interestsTitle {
@@ -552,11 +553,15 @@ input[type=password] {
   width: min-content;
   height: min-content;
   padding: 10px;
-  top: -30px;
+  top: -10px;
   margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 0;
+  z-index: 4;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
 }
 .interestsBox {
   border-style: solid;
@@ -571,4 +576,5 @@ input[type=password] {
   align-self: center;
   display: flex;
   position: absolute;
+  padding-top: 22px;
 }
