@@ -24,16 +24,17 @@
         </div>
 
     </div>
-
-    <div class="interestsBox">
-        <div class="bioItem">Books</div>
-        <div class="bioItem">Video Games</div>
-        <div class="bioItem">Anime</div>
-        <div class="bioItem">Sports</div>
-        <div class="bioItem">Movies</div>
-        <div class="bioItem">TV Shows</div>
+    <div class="interestsWrapper">
+    <div class="interestsTitle">Interests</div>
+        <div class="interestsBox">
+            <div class="bioItem">Books</div>
+            <div class="bioItem">Video Games</div>
+            <div class="bioItem">Anime</div>
+            <div class="bioItem">Sports</div>
+            <div class="bioItem">Movies</div>
+            <div class="bioItem">TV Shows</div>
+        </div>
     </div>
-
     <section class="interestsContainer">
         <p>Add interests: </p>
 

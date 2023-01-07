@@ -519,7 +519,7 @@ input[type=password] {
   grid-template-areas:
   'header header header'
   'about interestsContainer interestsContainer '
-  'interestsBox interestsContainer interestsContainer';
+  'interestsWrapper interestsContainer interestsContainer';
   row-gap: 10vh;
   column-gap: 15vw;
 }
@@ -531,24 +531,44 @@ input[type=password] {
   border-width: medium;
   background-color: rgba(141, 177, 227, 1);
   height: 120%;
-  width: 80%;
-  border-radius: 15px;
-  left: 4vw;
-}
-
-.interestsBox {
-  grid-area: interestsBox;
-  position: relative;
-  border-style: solid;
-  border-width: medium;
-  background-color: rgba(141, 177, 227, 1);
-  height: 120%;
   width: 100%;
   border-radius: 15px;
   left: 4vw;
+  bottom: 10vh;
+}
+
+.interestsWrapper {
+  position: relative;
+  grid-area: interestsWrapper;
+  left: 4vw;
+}
+
+.interestsTitle {
+  position:absolute;
+  border-style: solid;
+  border-width: medium;
+  background-color: rgba(141, 177, 227, 1);
+  border-radius: 15px;
+  width: min-content;
+  height: min-content;
+  padding: 10px;
+  top: -30px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+.interestsBox {
+  border-style: solid;
+  border-width: medium;
+  background-color: rgba(141, 177, 227, 1);
+  height: min-content;
+  width: 100%;
+  border-radius: 15px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-self: center;
-
+  display: flex;
+  position: absolute;
 }
