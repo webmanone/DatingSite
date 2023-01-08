@@ -32,8 +32,16 @@
     </div>
     <div class="interestsWrapper">
         <button class="interestModalButton" id="interestModalButton">+</button>
-        <div id="addInterestModal" class="modal">
-        
+        <div id="addInterestModal" class="addInterestModal">
+            <div class="interestModalContent">
+                <span class="close">&times;</span>
+                <form id="interestsModalForm">
+                <label for="interestsInput">Add an interests category</label><br>
+                <input type="text" id="interestsInput"><br>
+                <button type="submit">Add</button>
+                </form>
+
+            </div>
     
         </div>
 
