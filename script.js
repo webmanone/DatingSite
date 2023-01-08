@@ -1,41 +1,54 @@
-/*
-function goHome(){
-document.location="index.html"
-} */
 
-let leftButton=document.getElementById('leftButton');
-let rightButton=document.getElementById('rightButton');
-let leftButton2=document.getElementById('leftButton2');
-let rightButton2=document.getElementById('rightButton2');
-let leftButton3=document.getElementById('leftButton3');
-let rightButton3=document.getElementById('rightButton3');
+const leftButton=document.getElementById("leftButton");
+const rightButton=document.getElementById("rightButton");
+const leftButton2=document.getElementById("leftButton2");
+const rightButton2=document.getElementById("rightButton2");
+const leftButton3=document.getElementById("leftButton3");
+const rightButton3=document.getElementById("rightButton3");
 
+if (leftButton) {
 leftButton.onclick = function () {
     document.getElementById('interest1').scrollLeft -= 218;
 }
+}
 
+if (rightButton) {
 rightButton.onclick = function () {
     document.getElementById('interest1').scrollLeft += 218;
 }
+}
 
+if (leftButton2) {
 leftButton2.onclick = function () {
     document.getElementById('interest2').scrollLeft -= 218;
 }
+}
 
+if (rightButton2) {
 rightButton2.onclick = function () {
     document.getElementById('interest2').scrollLeft += 218;
 }
+}
 
+if (leftButton3) {
 leftButton3.onclick = function () {
     document.getElementById('interest3').scrollLeft -= 218;
 }
+}
 
+if (rightButton3) {
 rightButton3.onclick = function () {
     document.getElementById('interest3').scrollLeft += 218;
 }
-   /*
-    const ageContainer = document.getElementById('userDob');
-    const dob = ageContainer.textContent;
+}
+    const interestModalButton = document.getElementById("interestModalButton");
+    const addInterestModal = document.getElementById("addInterestModal");
+    const closeModal = document.getElementById("closeModal");
 
-    console.log(dob);
-    */
+    interestModalButton.addEventListener("click", () => {
+        addInterestModal.style.display = "block";
+    });
+
+    closeModal.addEventListener("click", () => {
+        addInterestModal.style.display = "none";
+    });

@@ -32,19 +32,6 @@
     </div>
     <div class="interestsWrapper">
         <button class="interestModalButton" id="interestModalButton">+</button>
-        <div id="addInterestModal" class="addInterestModal">
-            <div class="interestModalContent">
-                <span class="close">&times;</span>
-                <form id="interestsModalForm">
-                <label for="interestsInput">Add an interests category</label><br>
-                <input type="text" id="interestsInput"><br>
-                <button type="submit">Add</button>
-                </form>
-
-            </div>
-    
-        </div>
-
         <div class="interestsTitle">Interests</div>
             <div class="interestsBox">
                 <div class="bioItem">Books</div>
@@ -55,6 +42,18 @@
                 <div class="bioItem">TV Shows</div>
             </div>
     </div>
+
+    <div id="addInterestModal" class="addInterestModal">
+        <div class="interestModalContent">
+            <span class="closeModal" id="closeModal">&times;</span>
+            <form id="interestsModalForm">
+                <label for="interestsInput">Add an interests category:</label><br>
+                <input type="text" id="interestsInput"><br>
+                <button type="submit">Add</button>
+            </form>
+        </div>
+    </div>
+
     <div class="interestsContainer">
         
         <div>
