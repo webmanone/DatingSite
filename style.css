@@ -577,4 +577,24 @@ input[type=password] {
   display: flex;
   position: absolute;
   padding-top: 22px;
+  z-index: -1;
+}
+
+.interestModalButton {
+  float: right;
+  z-index: 1;
+  background-color:aqua;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: thin;
+  height: 35px;
+  width: 35px;
+  text-align: center;
+  vertical-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  position: relative;
+  left: 19px;
+  bottom: 10px;
+  cursor: pointer;
 }
