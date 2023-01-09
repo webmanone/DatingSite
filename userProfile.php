@@ -39,7 +39,6 @@
                 <div class="bioItem">Anime</div>
                 <div class="bioItem">Sports</div>
                 <div class="bioItem">Movies</div>
-                <div class="bioItem">TV Shows</div>
             </div>
     </div>
 
@@ -48,8 +47,8 @@
             <span class="closeModal" id="closeModal">&times;</span>
             <form id="interestsModalForm">
                 <label for="interestsInput">Add an interests category:</label><br>
-                <input type="text" id="interestsInput"><br>
-                <button type="submit">Add</button>
+                <input type="text" id="interestsInput" name="inputValue"><br>
+                <button type="submit" id="interestSubmit">Add</button>
             </form>
         </div>
     </div>
