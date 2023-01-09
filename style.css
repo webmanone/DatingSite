@@ -607,16 +607,16 @@ input[type=password] {
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
   text-align: center;
 }
 
 .interestModalContent {
   background-color: rgba(141, 177, 227, 1);
-  margin: 15% auto;
+  margin: 20% auto;
   padding: 20px;
   border: medium solid;
-  width: 80%;
+  width: 40%;
+  
 }
 
 .closeModal {
