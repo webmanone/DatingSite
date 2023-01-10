@@ -47,6 +47,7 @@ rightButton3.onclick = function () {
     const form = document.getElementById("interestsModalForm");
     const input = document.getElementById("interestsInput");
     const interestSubmit = document.getElementById("interestSubmit");
+    const interestsBox = document.getElementById("interestsBox");
 
     interestModalButton.addEventListener("click", () => {
         addInterestModal.style.display = "block";
@@ -55,21 +56,10 @@ rightButton3.onclick = function () {
     closeModal.addEventListener("click", () => {
         addInterestModal.style.display = "none";
     });
-    
-    const observer = new MutationObserver(() => {
-        const interestsBox = document.getElementById("interestsBox");
-        if (interestsBox) {
-          observer.disconnect();
-          form.addEventListener("submit", (event) => {
-            console.log(event);
-            console.log(input.value);
-            event.preventDefault();
-            interestsBox.innerHTML += `<div class="bioItem">${input.value}</div>`;
-            addInterestModal.style.display = "none";
-          });
-        }
-      });
-      
-      observer.observe(document.body, { childList: true, subtree: true });
-      
 
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        interestsBox.innerHTML += `<div class="bioItem">${input.value}</div>`;
+        addInterestModal.style.display = "none";
+    });
+      

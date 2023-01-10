@@ -33,7 +33,7 @@
     <div class="interestsWrapper">
         <button class="interestModalButton" id="interestModalButton">+</button>
         <div class="interestsTitle">Interests</div>
-            <div class="interestsBox">
+            <div class="interestsBox" id="interestsBox">
                 <div class="bioItem">Books</div>
                 <div class="bioItem">Video Games</div>
                 <div class="bioItem">Anime</div>
