@@ -57,9 +57,27 @@ rightButton3.onclick = function () {
         addInterestModal.style.display = "none";
     });
 
+    
     form.addEventListener("submit", (event) => {
         event.preventDefault();
         interestsBox.innerHTML += `<div class="bioItem">${input.value}</div>`;
         addInterestModal.style.display = "none";
     });
-      
+
+    document.getElementById("bioItem").addEventListener("mouseenter", mouseEnter);
+    document.getElementById("bioItem").addEventListener("mouseleave", mouseLeave);
+
+function mouseEnter() {
+    document.getElementById("deleteInterest").style.visibility = "visible";
+}
+
+function mouseLeave() {
+    document.getElementById("deleteInterest").style.visibility = "hidden";
+}
+
+        /*
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const newInterestinterestsBox.innerHTML += `<div class="bioItem">${input.value}</div>`;
+        addInterestModal.style.display = "none";
+    });*/
