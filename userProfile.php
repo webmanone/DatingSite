@@ -34,8 +34,8 @@
         <button class="interestModalButton" id="interestModalButton">+</button>
         <div class="interestsTitle">Interests</div>
             <div class="interestsBox" id="interestsBox">
-                <div class="bioItem">Books
-                    <button value="Delete" class="deleteInterest" id="deleteInterest">x</button>
+                <div class="bioItem" id="interest">Books
+                    <button value="Delete" id="deleteInterest">x</button>
                 </div>
                 <div class="bioItem">Video Games</div>
                 <div class="bioItem">Anime</div>
