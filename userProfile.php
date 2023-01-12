@@ -37,10 +37,18 @@
                 <div class="bioItem" id="interest">Books
                     <button value="Delete" id="deleteInterest">x</button>
                 </div>
-                <div class="bioItem">Video Games</div>
-                <div class="bioItem">Anime</div>
-                <div class="bioItem">Sports</div>
-                <div class="bioItem">Movies</div>
+                <div class="bioItem">Video Games
+                    <button value="Delete" id="deleteInterest">x</button>
+                </div>
+                <div class="bioItem">Anime
+                    <button value="Delete" id="deleteInterest">x</button>
+                </div>
+                <div class="bioItem">Sports
+                    <button value="Delete" id="deleteInterest">x</button>
+                </div>
+                <div class="bioItem">Movies
+                    <button value="Delete" id="deleteInterest">x</button>
+                </div>
             </div>
     </div>
 

@@ -60,7 +60,9 @@ rightButton3.onclick = function () {
     
     form.addEventListener("submit", (event) => {
         event.preventDefault();
-        interestsBox.innerHTML += `<div class="bioItem">${input.value}</div>`;
+        interestsBox.innerHTML += `<div class="bioItem">${input.value}
+        <button value="Delete" id="deleteInterest">x</button>                            
+        </div>`;
         addInterestModal.style.display = "none";
     });
 

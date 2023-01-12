@@ -634,6 +634,7 @@ input[type=password] {
     flex: max-content;
     position: relative;
     z-index: 2;
+    cursor: default;
   }
 
 .bioItem button {
@@ -648,6 +649,7 @@ input[type=password] {
 
 .bioItem:hover button {
   visibility: visible;
+  cursor: pointer;
 }
 
 .deleteInterest {
