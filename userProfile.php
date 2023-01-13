@@ -41,13 +41,13 @@
                     <button value="Delete" class="delete" id="deleteInterest">x</button>
                 </div>
                 <div class="bioItem">Anime
-                    <button value="Delete" id="deleteInterest">x</button>
+                    <button value="Delete" class="delete"id="deleteInterest">x</button>
                 </div>
                 <div class="bioItem">Sports
-                    <button value="Delete" id="deleteInterest">x</button>
+                    <button value="Delete" class="delete" id="deleteInterest">x</button>
                 </div>
                 <div class="bioItem">Movies
-                    <button value="Delete" id="deleteInterest">x</button>
+                    <button value="Delete" class="delete" id="deleteInterest">x</button>
                 </div>
             </div>
     </div>

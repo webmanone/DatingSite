@@ -48,8 +48,8 @@ rightButton3.onclick = function () {
     const input = document.getElementById("interestsInput");
     const interestSubmit = document.getElementById("interestSubmit");
     const interestsBox = document.getElementById("interestsBox");
-    const deleteInterest = document.getElementById("deleteInterest");
-    const interest = document.getElementById("interest");
+    const deleteInterest = document.querySelectorAll('.delete');
+    //const interests = document.querySelectorAll("delete");
 
     interestModalButton.addEventListener("click", () => {
         addInterestModal.style.display = "block";
@@ -63,16 +63,23 @@ rightButton3.onclick = function () {
     form.addEventListener("submit", (event) => {
         event.preventDefault();
         interestsBox.innerHTML += `<div class="bioItem">${input.value}
-        <button value="Delete" id="deleteInterest">x</button>                            
+        <button value="Delete" class="delete" id="deleteInterest">x</button>                            
         </div>`;
         addInterestModal.style.display = "none";
     });
 
-    deleteInterest.addEventListener("click", () => {
-        event.target.parentElement.remove();
-    });
-
-    
+    interestsBox.addEventListener("click", (event) => {
+        if (event.target.classList.contains("delete")) {
+          event.target.parentElement.remove();
+        }
+      });
+/*
+    for (let button of deleteInterest) {
+        button.addEventListener("click", (e) => {
+            e.target.parentElement.remove();
+        });
+    }
+    */
     
 
     /*
