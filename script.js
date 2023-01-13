@@ -48,6 +48,8 @@ rightButton3.onclick = function () {
     const input = document.getElementById("interestsInput");
     const interestSubmit = document.getElementById("interestSubmit");
     const interestsBox = document.getElementById("interestsBox");
+    const deleteInterest = document.getElementById("deleteInterest");
+    const interest = document.getElementById("interest");
 
     interestModalButton.addEventListener("click", () => {
         addInterestModal.style.display = "block";
@@ -66,6 +68,12 @@ rightButton3.onclick = function () {
         addInterestModal.style.display = "none";
     });
 
+    deleteInterest.addEventListener("click", () => {
+        event.target.parentElement.remove();
+    });
+
+    
+    
 
     /*
 document.getElementById("interest").onmouseenter = function() {mouseEnter()};
