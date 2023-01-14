@@ -59,20 +59,23 @@ rightButton3.onclick = function () {
         addInterestModal.style.display = "none";
     });
 
-    
     form.addEventListener("submit", (event) => {
         event.preventDefault();
-        interestsBox.innerHTML += `<div class="bioItem">${input.value}
-        <button value="Delete" class="delete" id="deleteInterest">x</button>                            
-        </div>`;
-        addInterestModal.style.display = "none";
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "includes/interestsInc.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.send(`interestInput=${input.value}`);
+        xhr.onload = () => {
+            if (xhr.status === 200) {
+                interestsBox.innerHTML += `<div class="bioItem">${input.value}
+                <button value="Delete" class="delete " id="deleteInterest">x</button>                            
+                </div>`;
+                addInterestModal.style.display = "none";
+            } else {
+                console.log("Error: " + xhr.status);
+            }
+        };
     });
-
-    interestsBox.addEventListener("click", (event) => {
-        if (event.target.classList.contains("delete")) {
-          event.target.parentElement.remove();
-        }
-      });
 /*
     for (let button of deleteInterest) {
         button.addEventListener("click", (e) => {

@@ -30,35 +30,21 @@
         </div>
 
     </div>
+    
     <div class="interestsWrapper">
         <button class="interestModalButton" id="interestModalButton">+</button>
         <div class="interestsTitle">Interests</div>
             <div class="interestsBox" id="interestsBox">
-                <div class="bioItem">Books
-                    <button value="Delete" class="delete" id="deleteInterest">x</button>
-                </div>
-                <div class="bioItem">Video Games
-                    <button value="Delete" class="delete" id="deleteInterest">x</button>
-                </div>
-                <div class="bioItem">Anime
-                    <button value="Delete" class="delete"id="deleteInterest">x</button>
-                </div>
-                <div class="bioItem">Sports
-                    <button value="Delete" class="delete" id="deleteInterest">x</button>
-                </div>
-                <div class="bioItem">Movies
-                    <button value="Delete" class="delete" id="deleteInterest">x</button>
-                </div>
+                <?php include 'includes/getInterestsInc.php'; ?>
             </div>
     </div>
-
     <div id="addInterestModal" class="addInterestModal">
         <div class="interestModalContent">
             <span class="closeModal" id="closeModal">&times;</span>
-            <form action="includes/interestsInc.php" method="post" id="interestsModalForm">
+            <form method="post" id="interestsModalForm">
                 <label for="interestsInput">Add an interests category:</label><br>
-                <input type="text" id="interestsInput" name="inputValue"><br>
-                <button type="submit" id="interestSubmit">Add</button>
+                <input type="text" id="interestsInput" name="interestInput"><br>
+                <button type="submit" id="interestSubmit" name="interestSubmit">Add</button>
             </form>
         </div>
     </div>
