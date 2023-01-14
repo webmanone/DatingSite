@@ -8,13 +8,12 @@ if(isset($_POST["interestSubmit"])) {
 
     $interest = mysqli_real_escape_string($conn, $interest);
 
-    $sql = "INSERT INTO interests (usersId, interestName) VALUES ('$userId', '$interest');";
-    mysqli_query($conn, $sql);
-    if(mysqli_query($conn, $sql)){
-        echo "Record inserted successfully";
-     } else{
-        echo "Error inserting record: " . mysqli_error($conn);
+    function addInterst ($conn, $userId) {
+    $sql = "INSERT INTO interests (usersId, interestName) VALUES (?, ?);";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../signup.php?error=stmtfailed");  
+        exit(); 
      }
-    exit();
-
+    }
 }
