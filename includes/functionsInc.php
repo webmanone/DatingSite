@@ -132,7 +132,7 @@ function addInterest ($conn, $userId, $interest) {
         header("location: ../userProfile.php?error=stmtfailed");  
         exit(); 
     }else {
-        mysqli_stmt_bind_param($stmt, "ss", $userId, $interest);
+        mysqli_stmt_bind_param($stmt, "is", $userId, $interest);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
         header("location: ../userProfile.php?error=none");  
