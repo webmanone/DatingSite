@@ -41,7 +41,7 @@
     <div id="addInterestModal" class="addInterestModal">
         <div class="interestModalContent">
             <span class="closeModal" id="closeModal">&times;</span>
-            <form method="post" action="includes/interestsInc.php" id="interestsModalForm">
+            <form action="includes/interestsInc.php" method="post" id="interestsModalForm">
                 <label for="interestsInput">Add an interests category:</label><br>
                 <input type="text" id="interestsInput" name="interestInput"><br>
                 <button type="submit" id="interestSubmit" name="interestSubmit">Add</button>

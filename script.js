@@ -58,7 +58,7 @@ rightButton3.onclick = function () {
     closeModal.addEventListener("click", () => {
         addInterestModal.style.display = "none";
     });
-
+/*
     form.addEventListener("submit", (event) => {
         event.preventDefault();
         const xhr = new XMLHttpRequest();
@@ -76,7 +76,7 @@ rightButton3.onclick = function () {
             }
         };
     });
-/*
+
     for (let button of deleteInterest) {
         button.addEventListener("click", (e) => {
             e.target.parentElement.remove();

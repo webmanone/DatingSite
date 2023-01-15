@@ -124,3 +124,18 @@ function loginUser($conn, $username, $pwd) {
         exit();
     }
 }
+
+function addInterest ($conn, $userId, $interest) {
+    $sql = "INSERT INTO interests (usersId, interestName) VALUES (?, ?);";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../userProfile.php?error=stmtfailed");  
+        exit(); 
+    }else {
+        mysqli_stmt_bind_param($stmt, "ss", $userId, $interest);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+        header("location: ../userProfile.php?error=none");  
+        exit();
+    }
+}
