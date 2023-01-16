@@ -49,7 +49,6 @@ rightButton3.onclick = function () {
     const interestSubmit = document.getElementById("interestSubmit");
     const interestsBox = document.getElementById("interestsBox");
     const deleteInterest = document.querySelectorAll('.delete');
-    //const interests = document.querySelectorAll("delete");
 
     interestModalButton.addEventListener("click", () => {
         addInterestModal.style.display = "block";
@@ -58,7 +57,31 @@ rightButton3.onclick = function () {
     closeModal.addEventListener("click", () => {
         addInterestModal.style.display = "none";
     });
-/*
+    console.log("deleteInterests: ",deleteInterest);
+    deleteInterest.forEach(button => {
+        button.addEventListener('click', event => {
+            const interestsId = event.target.dataset.interestsId;
+            console.log(interestsId);
+            console.log(event.target);
+            console.log("interestsId: ",interestsId);
+            fetch(`/datingSite/includes/deleteInterest.php?interestsId=${interestsId}`, {
+                method: 'DELETE'
+            })        
+            .then(response => {
+                console.log(response);
+                if(response.status === 204) {
+                    event.target.parentNode.remove();
+                }else {
+                    console.error('Error deleting interest');
+                }
+            })
+            .catch(error => {
+                console.error('Error deleting interest:', error);
+            });   
+        });
+    });
+
+    /*
     form.addEventListener("submit", (event) => {
         event.preventDefault();
         const xhr = new XMLHttpRequest();

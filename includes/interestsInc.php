@@ -1,6 +1,6 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'].'/datingSite/header.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/datingSite/header.php';
 
 if(isset($_POST["interestSubmit"])) {
 
