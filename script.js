@@ -57,6 +57,7 @@ rightButton3.onclick = function () {
     closeModal.addEventListener("click", () => {
         addInterestModal.style.display = "none";
     });
+    
     console.log("deleteInterests: ",deleteInterest);
     deleteInterest.forEach(button => {
         button.addEventListener('click', event => {
