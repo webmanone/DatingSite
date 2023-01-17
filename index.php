@@ -13,6 +13,22 @@
             }
         ?>
     </section>
+
+    <div class="indexDiv">
+        Find someone that likes what you like!
+    </div>
+
+
+    <?php
+            if (!isset($_SESSION["userid"])) {
+                echo "<div class='indexDiv'>Set up your profile <a href='signup.php'>here!</a></div>";
+            }
+
+            if (isset($_SESSION["userid"])) {
+                echo "<div class='indexDiv'>Edit your profile and search <a href='userProfile.php'>here!</a></div>";
+            }
+        ?>
+
 <?php
     include_once 'footer.php';
 ?>

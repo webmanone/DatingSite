@@ -664,7 +664,16 @@ input[type=password] {
   z-index: 2;
 }
 
+h1 {
+  font-size: xx-large;
+}
 
+.indexDiv {
+  text-align: center;
+  padding: 100px;
+  font-size: xx-large;
+  font-weight: bold;
+}
 /*
 .interestsModalForm {
 
