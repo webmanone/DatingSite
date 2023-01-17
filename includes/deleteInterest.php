@@ -2,16 +2,16 @@
 
 require_once 'dbhInc.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
-    
+if(isset($_GET['interestsId'])){
     $interestsId = $_GET['interestsId'];
-    echo $interestsId;
-    $sql = "DELETE FROM interests WHERE interestsId = $interestsId";
-    $result = $conn->query($sql);
+    $sql = "DELETE FROM interests WHERE interestsId = '$interestsId';";
+    $result = mysqli_query($conn, $sql);
 
     if ($result) {
-        http_response_code(204);
-    } else {
-        http_response_code(500);
+        mysqli_close($conn);
+        header("location: ../userProfile.php");
+        exit();
+    }else {
+        echo "Error deleting record";
     }
 }
