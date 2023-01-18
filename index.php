@@ -21,7 +21,7 @@
 
     <?php
             if (!isset($_SESSION["userid"])) {
-                echo "<div class='indexDiv'>Set up your profile <a href='signup.php'>here!</a></div>";
+                echo "<div class='indexDiv'>Set up your profile <a href='signup.php'>here</a>, or log in <a href='login.php'>here!</a></div>";
             }
 
             if (isset($_SESSION["userid"])) {
