@@ -17,7 +17,6 @@
 <nav class="navbar">
     <ul>
         <li><a href="index.php">Home</a></li>
-        <li><a href="myProfile.php">My Profile</a></li>
         <?php
             if (isset($_SESSION["userid"])) {
                 echo "<li><a href='userProfile.php'>User Profile Page</a></li>";
