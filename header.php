@@ -19,7 +19,7 @@
         <li><a href="index.php">Home</a></li>
         <?php
             if (isset($_SESSION["userid"])) {
-                echo "<li><a href='userProfile.php'>User Profile Page</a></li>";
+                echo "<li><a href='userProfile.php'>Profile Page</a></li>";
                 echo "<li><a href='includes/logoutInc.php'>Log Out</a></li>";
             }
             else {

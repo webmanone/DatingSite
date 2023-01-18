@@ -5,23 +5,29 @@
     
     <h1>Dating Site</h1>
     
-    <section>
-        <?php
-            if (isset($_SESSION["userid"])) {
-                echo "<p>Welcome, " . $_SESSION["userFirstname"] . "!</p>";
-                
-            }
-        ?>
-    </section>
-
     <div class="indexDiv">
-        Find someone that likes what you like!
+        <?php 
+        if (isset($_SESSION["userid"])) {
+            echo
+            "<div> Welcome, " . $_SESSION["userFirstname"] . "!</div>";
+        }
+
+        if (!isset($_SESSION["userid"])) {
+            echo
+            "<div>Find someone that likes what you like!</div>";
+        }
+        ?>
     </div>
 
 
     <?php
             if (!isset($_SESSION["userid"])) {
-                echo "<div class='indexDiv'>Set up your profile <a href='signup.php'>here</a>, or log in <a href='login.php'>here!</a></div>";
+                echo 
+                "<div class='indexDiv'>
+                    <div>
+                        Set up your profile <a href='signup.php'>here</a>, or log in <a href='login.php'>here!</a>
+                    </div>
+                </div>";
             }
 
             if (isset($_SESSION["userid"])) {
