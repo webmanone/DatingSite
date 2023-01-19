@@ -18,7 +18,10 @@
         }
         ?>
     </div>
-
+    
+    <div class="heartContainer"><br><br>
+        <div class="heart"></div>
+    </div>
 
     <?php
             if (!isset($_SESSION["userid"])) {
