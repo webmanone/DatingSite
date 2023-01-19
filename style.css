@@ -674,12 +674,24 @@ h1 {
   padding: 100px;
   font-size: xx-large;
   font-weight: bold;
-  transition: .4s;
-  overflow: hidden;
 }
 
-.indexDiv:hover {
-  -ms-transform: scale(1.2);
-  -webkit-transform: scale(1.2); 
-  transform: scale(1.2); 
+.enlarge {
+  transition: .4s;
+}
+
+.enlarge:hover {
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1); 
+  transform: scale(1.1); 
+}
+
+.indexLink {
+  color: black;
+  transition: .2s;
+}
+
+.indexLink:hover {
+  color: blue;
+  font-size: 34px;
 }

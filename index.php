@@ -23,15 +23,15 @@
     <?php
             if (!isset($_SESSION["userid"])) {
                 echo 
-                "<div class='indexDiv'>
+                "<div class='indexDiv enlarge'>
                     <div>
-                        Set up your profile <a href='signup.php'>here</a>, or log in <a href='login.php'>here!</a>
+                        Set up your profile <a href='signup.php' class='indexLink'>here</a>, or log in <a href='login.php' class='indexLink'>here!</a>
                     </div>
                 </div>";
             }
 
             if (isset($_SESSION["userid"])) {
-                echo "<div class='indexDiv'>Edit your profile and search <a href='userProfile.php'>here!</a></div>";
+                echo "<div class='indexDiv enlarge'>Edit your profile and search <a href='userProfile.php' class='indexLink'>here!</a></div>";
             }
         ?>
 
