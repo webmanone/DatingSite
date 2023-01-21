@@ -57,4 +57,19 @@ rightButton3.onclick = function () {
     closeModal.addEventListener("click", () => {
         addInterestModal.style.display = "none";
     });
-    
+
+    const bioItems = document.querySelectorAll('.bioItem');
+    let activeCount = 0;
+
+    for (let i = 0; i < bioItems.length; i++) {
+        bioItems[i].addEventListener('click', function() {
+        if (activeCount < 3){
+            this.classList.toggle('active');
+            if(this.classList.contains('active')){
+                activeCount++;
+            }else{
+                activeCount--;
+        }
+    }
+    });
+}

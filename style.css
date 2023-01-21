@@ -658,6 +658,11 @@ input[type=password] {
     box-shadow: inset 0 0 10px blue;
   }
 
+  .bioItem.active {
+    border-color: blue;
+    box-shadow: inset 0 0 10px blue;
+  }
+
 .bioItem button {
   border-radius: 50%;
   background-color: transparent;
