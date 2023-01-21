@@ -26,7 +26,7 @@
     <?php
             if (!isset($_SESSION["userid"])) {
                 echo 
-                "<div class='indexDiv enlarge'>
+                "<div class='indexDiv2 enlarge'>
                     <div>
                         Set up your profile <a href='signup.php' class='indexLink'>here</a>, or log in <a href='login.php' class='indexLink'>here!</a>
                     </div>
@@ -34,7 +34,7 @@
             }
 
             if (isset($_SESSION["userid"])) {
-                echo "<div class='indexDiv enlarge'>Edit your profile and search <a href='userProfile.php' class='indexLink'>here!</a></div>";
+                echo "<div class='indexDiv2 enlarge'>Edit your profile and search <a href='userProfile.php' class='indexLink'>here!</a></div>";
             }
         ?>
 

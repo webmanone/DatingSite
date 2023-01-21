@@ -673,7 +673,21 @@ h1 {
   text-align: center;
   padding: 100px;
   font-size: xx-large;
-  font-weight: bold;
+  font-weight: 500;
+}
+
+.indexDiv2 {
+  text-align: center;
+  padding: 50px;
+  font-size: xx-large;
+  font-weight: 500;
+  width: 50%;
+  border: solid 1px lightblue;
+  margin: auto;
+  border-radius: 20px;
+  position: relative;
+  top: 60px;
+  background-color: aqua;
 }
 
 .enlarge {
@@ -693,7 +707,6 @@ h1 {
 
 .indexLink:hover {
   color: blue;
-  font-size: 34px;
 }
 
 .heartContainer{
