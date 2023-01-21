@@ -624,9 +624,23 @@ input[type=password] {
   cursor: pointer;
 }
 
+.aboutItem {
+  border-style: solid;
+  border-width: thin;
+  text-align: center;
+  padding: 15px;
+  border-radius: 20px;
+  background-color: aqua;
+  margin: 5px;
+  flex: max-content;
+  position: relative;
+  z-index: 2;
+  cursor: default;
+}
+
 .bioItem {
     border-style: solid;
-    border-width: thin;
+    border-width: 1px;
     text-align: center;
     padding: 15px;
     border-radius: 20px;
@@ -636,18 +650,26 @@ input[type=password] {
     position: relative;
     z-index: 2;
     cursor: default;
+    box-shadow: none;
+  }
+
+  .bioItem:hover, bioItem:active {
+    background-color: blue;
+    box-shadow: inset 0 0 10px blue;
   }
 
 .bioItem button {
   border-radius: 50%;
-  background-color: rgb(174, 232, 255);
+  background-color: transparent;
   position: absolute;
-  top: 0;
-  right:0;
+  top: 2px;
+  right: 8px;
   z-index: 3;
   visibility: hidden;
   opacity: 0;
   transition: all 0.5s;
+  border: 1px black;
+  padding: 0 0;
 }
 
 .bioItem:hover button {
