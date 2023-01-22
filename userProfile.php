@@ -33,11 +33,14 @@
     
     <div class="interestsWrapper">
         <button class="interestModalButton" id="interestModalButton">+</button>
-        <div class="interestsTitle">Interests</div>
-            <div class="interestsBox" id="interestsBox">
-                <?php include 'includes/getInterestsInc.php'; ?>
-            </div>
+        <div class="interestsTitle">
+            Interests
+        </div>
+        <div class="interestsBox" id="interestsBox">
+            <?php include 'includes/getInterestsInc.php'; ?>
+        </div>
     </div>
+    
     <div id="addInterestModal" class="addInterestModal">
         <div class="interestModalContent">
             <span class="closeModal" id="closeModal">&times;</span>
@@ -48,19 +51,20 @@
             </form>
         </div>
     </div>
+    
+    <div id="errorModal" class="errorModal">
+        <div class="errorModalContent">
+            <span class="closeModal">&times;</span>
+            <p>You can select a maximum of 3 interests</p>
+        </div>
+    </div>
 
     <div class="interestsContainer">
-        
         <div>
             Add
     
         </div>
-
-
-    </section>
-
-
-</div>
+    </div>
 
 <?php
     include_once 'footer.php';

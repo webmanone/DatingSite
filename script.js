@@ -49,6 +49,7 @@ rightButton3.onclick = function () {
     const interestSubmit = document.getElementById("interestSubmit");
     const interestsBox = document.getElementById("interestsBox");
     const deleteInterest = document.querySelectorAll('.delete');
+    const interestsWrapper = document.getElementById("interestsWrapper");
 
     interestModalButton.addEventListener("click", () => {
         addInterestModal.style.display = "block";
@@ -60,16 +61,31 @@ rightButton3.onclick = function () {
 
     const bioItems = document.querySelectorAll('.bioItem');
     let activeCount = 0;
+   
+    const errorModal = document.getElementById("errorModal");
+    const closeError = document.getElementsByClassName("closeModal")[1];
 
     for (let i = 0; i < bioItems.length; i++) {
         bioItems[i].addEventListener('click', function() {
-        if (activeCount < 3){
-            this.classList.toggle('active');
-            if(this.classList.contains('active')){
-                activeCount++;
-            }else{
-                activeCount--;
-        }
+            if (activeCount < 3) {
+                if(!this.classList.contains('active')){
+                    this.classList.add('active');
+                    activeCount++;
+                }else{
+                    this.classList.remove('active');
+                    activeCount--;
+                }
+            } else {
+                if(!this.classList.contains('active')){
+                    errorModal.style.display = "block";
+                }else{
+                    this.classList.remove('active');
+                    activeCount--;
+                }
+            }
+        });
     }
-    });
+
+closeError.onclick = function() {
+  errorModal.style.display = "none";
 }
