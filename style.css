@@ -600,6 +600,8 @@ input[type=password] {
   width: 100%;
   height: 100%;
   text-align: center;
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4);
 }
 
 .interestModalContent {
@@ -608,13 +610,17 @@ input[type=password] {
   padding: 20px;
   border: medium solid;
   width: 40%;
-  
+  position: relative;
 }
 
 .closeModal {
   float: right;
   font-size: 28px;
   font-weight: bold;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #484848;
 }
 
 .closeModal:hover,
@@ -673,7 +679,7 @@ input[type=password] {
   visibility: hidden;
   opacity: 0;
   transition: all 0.5s;
-  border: 1px black;
+  border: none;
   padding: 0 0;
 }
 
@@ -681,15 +687,11 @@ input[type=password] {
   visibility: visible;
   opacity: 1;
   cursor: pointer;
+  color: #484848;
 }
 
-.deleteInterest {
-  border-radius: 50%;
-  background-color: rgb(174, 232, 255);
-  position: absolute;
-  top: 0;
-  right:0;
-  z-index: 2;
+.bioItem button:hover {
+  color: black;
 }
 
 h1 {
@@ -813,5 +815,6 @@ h1 {
   padding: 20px;
   border: medium solid;
   width: 40%;
+  position: relative;
 }
 
