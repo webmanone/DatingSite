@@ -65,12 +65,30 @@ rightButton3.onclick = function () {
     const errorModal = document.getElementById("errorModal");
     const closeError = document.getElementsByClassName("closeModal")[1];
 
+    const selectedInterests = document.getElementById("selectedInterestsContainer");
+
     for (let i = 0; i < bioItems.length; i++) {
         bioItems[i].addEventListener('click', function() {
             if (activeCount < 3) {
                 if(!this.classList.contains('active')){
                     this.classList.add('active');
                     activeCount++;
+                    
+                    const interestName = this.innerHTML;
+
+                    const interestWrapper = document.createElement("div");
+                    interestWrapper.classList.add("interestWrapper");
+
+                    const interestMain = document.createElement("div");
+                    interestMain.classList.add("interestWrapper");
+
+                    const interestTitle = document.createElement("div");
+                    interestTitle.innerHTML = interestName;
+                    interestTitle.classList.add("interestTitle");
+
+                    interestWrapper.appendChild(interestTitle);
+                    interestWrapper.appendChild(interestMain);
+
                 }else{
                     this.classList.remove('active');
                     activeCount--;
@@ -89,3 +107,4 @@ rightButton3.onclick = function () {
 closeError.onclick = function() {
   errorModal.style.display = "none";
 }
+
