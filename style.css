@@ -235,12 +235,6 @@ Was being seizury so commented out.
     grid-area: location;
   }
 
-  .interestTitle {
-    text-align: center;
-    position: relative;
-    right: 8vw;
-  }
-
   .interest1 {
     height: 80px;
     position: relative;
@@ -508,8 +502,8 @@ input[type=password] {
   grid-template-columns: min-content auto auto;
   grid-template-areas:
   'header header header'
-  'about interestsContainer interestsContainer '
-  'interestsWrapper interestsContainer interestsContainer';
+  'about selectedInterestsWrapper selectedInterestsWrapper '
+  'interestsWrapper selectedInterestsWrapper selectedInterestsWrapper';
   row-gap: 10vh;
   column-gap: 15vw;
   z-index: 1;
@@ -818,3 +812,32 @@ h1 {
   position: relative;
 }
 
+.selectedInterestsWrapper {
+  grid-area: selectedInterestsWrapper;
+  display: flex;
+  flex-direction: column;
+}
+
+.interestWrapper {
+  width: 60%;
+  display: flex;
+  align-items: center;
+}
+
+.interestTitle {
+  font-size: large;
+  font-weight: bold;
+}
+
+.interestMain {
+  width: auto;
+  display: flex;
+  align-items: center;
+  scroll-behavior: smooth;
+  gap: 4vw;
+  overflow: hidden;
+  border-style: solid;
+  border-width: medium;
+  border-radius: 15px;
+  background-color: aqua; 
+}

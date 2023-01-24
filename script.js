@@ -65,7 +65,7 @@ rightButton3.onclick = function () {
     const errorModal = document.getElementById("errorModal");
     const closeError = document.getElementsByClassName("closeModal")[1];
 
-    const selectedInterests = document.getElementById("selectedInterestsContainer");
+    const selectedInterestsWrapper = document.getElementById("selectedInterestsWrapper");
 
     for (let i = 0; i < bioItems.length; i++) {
         bioItems[i].addEventListener('click', function() {
@@ -79,16 +79,17 @@ rightButton3.onclick = function () {
                     const interestWrapper = document.createElement("div");
                     interestWrapper.classList.add("interestWrapper");
 
-                    const interestMain = document.createElement("div");
-                    interestMain.classList.add("interestWrapper");
-
                     const interestTitle = document.createElement("div");
                     interestTitle.innerHTML = interestName;
                     interestTitle.classList.add("interestTitle");
 
+                    const interestMain = document.createElement("div");
+                    interestMain.classList.add("interestMain");
+
                     interestWrapper.appendChild(interestTitle);
                     interestWrapper.appendChild(interestMain);
 
+                    selectedInterestsWrapper.appendChild(interestWrapper);
                 }else{
                     this.classList.remove('active');
                     activeCount--;

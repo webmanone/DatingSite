@@ -59,11 +59,8 @@
         </div>
     </div>
 
-    <div class="interestsContainer">
-        <div>
-            Add
-    
-        </div>
+    <div class="selectedInterestsWrapper" id="selectedInterestsWrapper">
+        
     </div>
 
 <?php
