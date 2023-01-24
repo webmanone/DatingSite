@@ -74,7 +74,7 @@ rightButton3.onclick = function () {
                     this.classList.add('active');
                     activeCount++;
                     
-                    const interestName = this.innerHTML;
+                    const interestName = this.textContent.split("×")[0].trim();
 
                     const interestWrapper = document.createElement("div");
                     interestWrapper.classList.add("interestWrapper");
