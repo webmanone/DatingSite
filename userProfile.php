@@ -12,8 +12,9 @@
 
     <div class="about">
         
-        <img src="images/emptyProfile.png" class="bioPic">
-        
+        <div>
+            <img src="images/emptyProfile.png" class="bioPic">
+        </div>
         
         <div class="bioGrid">
             <div class="firstName aboutItem capitaliseFirst"><?php echo $_SESSION["userFirstname"]?></div>
