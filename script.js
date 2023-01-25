@@ -78,6 +78,7 @@ rightButton3.onclick = function () {
 
                     const interestWrapper = document.createElement("div");
                     interestWrapper.classList.add("interestWrapper");
+                    interestWrapper.setAttribute("id", `interestWrapper-${interestName}`);
 
                     const interestTitle = document.createElement("div");
                     interestTitle.innerHTML = interestName;
@@ -93,6 +94,10 @@ rightButton3.onclick = function () {
                 }else{
                     this.classList.remove('active');
                     activeCount--;
+                    const interestName = this.textContent.split("×")[0].trim();
+                    const interestWrapperId = `interestWrapper-${interestName}`;
+                    const interestWrapperToRemove = document.getElementById(interestWrapperId);
+                    selectedInterestsWrapper.removeChild(interestWrapperToRemove);
                 }
             } else {
                 if(!this.classList.contains('active')){
@@ -100,6 +105,10 @@ rightButton3.onclick = function () {
                 }else{
                     this.classList.remove('active');
                     activeCount--;
+                    const interestName = this.textContent.split("×")[0].trim();
+                    const interestWrapperId = `interestWrapper-${interestName}`;
+                    const interestWrapperToRemove = document.getElementById(interestWrapperId);
+                    selectedInterestsWrapper.removeChild(interestWrapperToRemove);
                 }
             }
         });
