@@ -79,7 +79,7 @@ rightButton3.onclick = function () {
                     const interestWrapper = document.createElement("div");
                     interestWrapper.classList.add("interestWrapper");
                     interestWrapper.setAttribute("id", `interestWrapper-${interestName}`);
-
+                    
                     const interestTitle = document.createElement("div");
                     interestTitle.innerHTML = interestName;
                     interestTitle.classList.add("interestTitle");
@@ -95,7 +95,11 @@ rightButton3.onclick = function () {
                     interestWrapper.appendChild(addInterest);
                     interestWrapper.appendChild(interestMain);
 
+                    interestWrapper.classList.add("fadeIn");
                     selectedInterestsWrapper.appendChild(interestWrapper);
+                    setTimeout(() => {
+                        interestWrapper.classList.remove("fadeIn");
+                    }, 2000);
                 }else{
                     this.classList.remove('active');
                     activeCount--;
