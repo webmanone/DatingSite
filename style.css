@@ -818,12 +818,12 @@ h1 {
   flex-direction: column;
   gap: 0px;
   position: absolute;
-  width: 100%;
+  width: 80%;
   top: 25px;
 }
 
 .interestWrapper {
-  width: 80%;
+  width: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -863,4 +863,11 @@ h1 {
   position: relative;
   top: 20px;
   left: 15px;
+}
+.userNameTitle {
+  font-size: xx-large;
+  font-weight: bold;
+  position: relative;
+  text-align: center;
+  bottom: 40px;
 }

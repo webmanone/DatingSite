@@ -4,10 +4,8 @@
 
 <div class="userGridContainer">
 
-<div class="header"><div class="pad"></div><h1>
-    <?php
-            echo $_SESSION["userFirstname"] . " " . $_SESSION["userLastname"];
-    ?>
+    <div class="header"><div class="pad"></div><h1>
+        
     </h1></div>
 
     <div class="about">
@@ -61,7 +59,12 @@
     </div>
 
     <div class="selectedInterestsWrapper" id="selectedInterestsWrapper">
-        
+        <div class="userNameTitle">
+            <?php
+                echo 
+                $_SESSION["userFirstname"];
+            ?>
+        </div>
     </div>
 
 <?php
