@@ -816,10 +816,10 @@ h1 {
   grid-area: selectedInterestsWrapper;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 0px;
   position: absolute;
   width: 100%;
-  top: 50px;
+  top: 25px;
 }
 
 .interestWrapper {
@@ -832,6 +832,8 @@ h1 {
 .interestTitle {
   font-size: large;
   font-weight: bold;
+  position: relative;
+  top: 30px;
 }
 
 .interestMain {
@@ -846,4 +848,19 @@ h1 {
   border-width: medium;
   border-radius: 15px;
   background-color: rgba(141, 177, 227, 1); 
+}
+
+.addSpecific {
+  border-radius: 50%;
+  background-color: aqua;
+  height: 35px;
+  width: 35px;
+  font-size: 25px;
+  font-weight: bold;
+  border-width: thin;
+  cursor: pointer;
+  align-self: flex-end;
+  position: relative;
+  top: 20px;
+  left: 15px;
 }

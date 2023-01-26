@@ -87,7 +87,12 @@ rightButton3.onclick = function () {
                     const interestMain = document.createElement("div");
                     interestMain.classList.add("interestMain");
 
+                    const addInterest = document.createElement("button");
+                    addInterest.classList.add("addSpecific");
+                    addInterest.innerHTML = `+`;
+
                     interestWrapper.appendChild(interestTitle);
+                    interestWrapper.appendChild(addInterest);
                     interestWrapper.appendChild(interestMain);
 
                     selectedInterestsWrapper.appendChild(interestWrapper);
