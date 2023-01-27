@@ -97,6 +97,19 @@ rightButton3.onclick = function () {
 
                     selectedInterestsWrapper.appendChild(interestWrapper);
 
+                    const addSpecificInterest = document.querySelector(".addSpecificInterest");
+
+                    selectedInterestsWrapper.addEventListener("click", function(event) {
+                        if (event.target.classList.contains("addSpecific")) {
+                            addSpecificInterest.style.display = "block";
+                        } 
+                    });
+                    
+                    addSpecificInterest.addEventListener("click", function(event) {
+                    if (event.target.classList.contains("closeModal")) {
+                        addSpecificInterest.style.display = "none";
+                    }
+                    });
                 }else{
                     this.classList.remove('active');
                     activeCount--;
