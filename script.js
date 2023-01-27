@@ -95,11 +95,8 @@ rightButton3.onclick = function () {
                     interestWrapper.appendChild(addInterest);
                     interestWrapper.appendChild(interestMain);
 
-                    interestWrapper.classList.add("fadeIn");
                     selectedInterestsWrapper.appendChild(interestWrapper);
-                    setTimeout(() => {
-                        interestWrapper.classList.remove("fadeIn");
-                    }, 2000);
+
                 }else{
                     this.classList.remove('active');
                     activeCount--;
