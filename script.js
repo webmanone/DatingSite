@@ -101,17 +101,29 @@ rightButton3.onclick = function () {
 
                     const addSpecificInterest = document.querySelector(".addSpecificInterest");
 
+                    let selectedInterestName;
+                    let selectedInterestsId;
+
                     selectedInterestsWrapper.addEventListener("click", function(event) {
                         if (event.target.classList.contains("addSpecific")) {
                             let interestWrapper = event.target.parentNode.parentNode.parentNode;
-                            let interestName = interestWrapper.querySelector(".interestName").value;
-                            let interestsId = interestWrapper.querySelector(".interestsId").value;
-                            addSpecificInterest.setAttribute("data-interest-name", interestName);
-                            addSpecificInterest.setAttribute("data-interest-id", interestsId);
+                            selectedInterestName = interestWrapper.querySelector(".interestName").value;
+                            selectedInterestsId = interestWrapper.querySelector(".interestsId").value;
+                            /*addSpecificInterest.setAttribute("data-interest-name", interestName);
+                            addSpecificInterest.setAttribute("data-interest-id", interestsId);*/
                             addSpecificInterest.style.display = "block";
                         } 
                     });
                     
+                    document.getElementById("addSpecificForm").addEventListener("submit", function(event) {
+                        event.preventDefault();
+                        let interestNameInput = document.querySelector("input[name='interestName']");
+                        let interestsIdInput = document.querySelector("input[name='interestsId']");
+                        interestNameInput.value = selectedInterestName;
+                        interestsIdInput.value = selectedInterestsId;
+                        this.submit();
+                    });
+
                     addSpecificInterest.addEventListener("click", function(event) {
                     if (event.target.classList.contains("closeModal")) {
                         addSpecificInterest.style.display = "none";
