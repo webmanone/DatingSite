@@ -11,6 +11,8 @@ if (mysqli_num_rows($result) > 0) {
         $interest = $row['interestName'];
         $interestsId = $row['interestsId'];
         echo "<div class='bioItem'>$interest
+                <input type='hidden' class='interestName' value='$interest'>
+                <input type='hidden' class='interestsId' value='$interestsId'>
                 <button value='Delete' class='deleteInterest' onclick='location.href=`includes/deleteInterest.php?interestsId=$interestsId`' id='deleteInterest'>&times;</button>
               </div>";
     }

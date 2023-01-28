@@ -90,6 +90,8 @@ rightButton3.onclick = function () {
                     const addInterest = document.createElement("button");
                     addInterest.classList.add("addSpecific");
                     addInterest.innerHTML = `+`;
+                    /*addInterest.setAttribute("data-interest-name", this.bioItems.interestName);
+                    addInterest.setAttribute("data-interest-id", this.bioItems.interestsId);*/
 
                     interestWrapper.appendChild(interestTitle);
                     interestWrapper.appendChild(addInterest);
@@ -101,6 +103,11 @@ rightButton3.onclick = function () {
 
                     selectedInterestsWrapper.addEventListener("click", function(event) {
                         if (event.target.classList.contains("addSpecific")) {
+                            let interestWrapper = event.target.parentNode.parentNode.parentNode;
+                            let interestName = interestWrapper.querySelector(".interestName").value;
+                            let interestsId = interestWrapper.querySelector(".interestsId").value;
+                            addSpecificInterest.setAttribute("data-interest-name", interestName);
+                            addSpecificInterest.setAttribute("data-interest-id", interestsId);
                             addSpecificInterest.style.display = "block";
                         } 
                     });

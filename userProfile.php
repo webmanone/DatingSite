@@ -56,6 +56,8 @@
             <span class="closeModal" id="closeModal">&times;</span>
             <form action="includes/addSpecificInc.php" method="post" id="addSpecificForm">
                 <label for="specificInterest">Add a specific interest for this category:</label><br>
+                <input type='hidden' name='interestName' value='"+interestName+"'>
+                <input type='hidden' name='interestsId' value='"+interestsId+"'>
                 <input type="text" id="specificInterest" name="specificInterest"><br>
                 <button type="submit" id="specificSubmit" name="specificSubmit">Add</button>
             </form>

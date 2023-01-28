@@ -4,9 +4,9 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/datingSite/header.php';
 
 if(isset($_POST["specificSubmit"])) {
 
-    //$interestsId = get interestsId in here
+    $interestsId = $_POST["interestsName"];
     $userId = $_SESSION['userid'];
-    //$itemsTitle = get category in here
+    $itemsTitle = $_POST["interestsId"];
     $itemsName = $_POST["specificInterest"];
 
     require_once 'dbhInc.php';
