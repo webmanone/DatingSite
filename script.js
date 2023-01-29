@@ -90,8 +90,6 @@ rightButton3.onclick = function () {
                     const addInterest = document.createElement("button");
                     addInterest.classList.add("addSpecific");
                     addInterest.innerHTML = `+`;
-                    /*addInterest.setAttribute("data-interest-name", this.bioItems.interestName);
-                    addInterest.setAttribute("data-interest-id", this.bioItems.interestsId);*/
 
                     interestWrapper.appendChild(interestTitle);
                     interestWrapper.appendChild(addInterest);
@@ -117,15 +115,8 @@ rightButton3.onclick = function () {
                             addSpecificInterest.style.display = "block";
                         } 
                     });
-                    /*
-                    document.getElementById("addSpecificForm").addEventListener("submit", function(event) {
-                        event.preventDefault();
-                        let interestNameInput = document.querySelector("input[name='interestName']");
-                        let interestsIdInput = document.querySelector("input[name='interestsId']");
-                        interestNameInput.value = selectedInterestName;
-                        interestsIdInput.value = selectedInterestsId;
-                        this.submit();
-                    });*/
+                    
+                    //figure out how to keep selected items in cache and have them stay up when the specific interest is added
 
                     addSpecificInterest.addEventListener("click", function(event) {
                     if (event.target.classList.contains("closeModal")) {
