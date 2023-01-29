@@ -63,7 +63,7 @@ rightButton3.onclick = function () {
     let activeCount = 0;
    
     const errorModal = document.getElementById("errorModal");
-    const closeError = document.getElementsByClassName("closeModal")[1];
+    const closeError = document.getElementsByClassName("closeModal")[2];
 
     const selectedInterestsWrapper = document.getElementById("selectedInterestsWrapper");
 
@@ -104,17 +104,20 @@ rightButton3.onclick = function () {
                     let selectedInterestName;
                     let selectedInterestsId;
 
+                    let formInterestName = document.getElementById("interestName");
+                    let formInterestId = document.getElementById("interestsId");
+
                     selectedInterestsWrapper.addEventListener("click", function(event) {
                         if (event.target.classList.contains("addSpecific")) {
                             let interestWrapper = event.target.parentNode.parentNode.parentNode;
                             selectedInterestName = interestWrapper.querySelector(".interestName").value;
                             selectedInterestsId = interestWrapper.querySelector(".interestsId").value;
-                            /*addSpecificInterest.setAttribute("data-interest-name", interestName);
-                            addSpecificInterest.setAttribute("data-interest-id", interestsId);*/
+                            formInterestName.value = selectedInterestName;
+                            formInterestId.value = selectedInterestsId;
                             addSpecificInterest.style.display = "block";
                         } 
                     });
-                    
+                    /*
                     document.getElementById("addSpecificForm").addEventListener("submit", function(event) {
                         event.preventDefault();
                         let interestNameInput = document.querySelector("input[name='interestName']");
@@ -122,7 +125,7 @@ rightButton3.onclick = function () {
                         interestNameInput.value = selectedInterestName;
                         interestsIdInput.value = selectedInterestsId;
                         this.submit();
-                    });
+                    });*/
 
                     addSpecificInterest.addEventListener("click", function(event) {
                     if (event.target.classList.contains("closeModal")) {
