@@ -841,6 +841,7 @@ h1 {
   height: 120px;
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
   scroll-behavior: smooth;
   gap: 4vw;
   overflow: hidden;
@@ -892,4 +893,12 @@ h1 {
   border: medium solid;
   width: 40%;
   position: relative;
+}
+
+.specificDiv {
+  background-color: aqua;
+  text-align: center;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 50px;
 }

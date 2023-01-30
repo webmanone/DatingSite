@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="style.css">
     <script defer src="activePage.js"></script>
     <title>Dating Site</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 <body>
 
