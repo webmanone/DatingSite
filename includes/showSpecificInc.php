@@ -14,8 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             array_push($specificInterests, $row['itemsName']);
         }
         echo json_encode($specificInterests);
-    } else {
-        echo "No specific interests added yet";
     }
 
 }

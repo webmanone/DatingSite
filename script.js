@@ -41,6 +41,8 @@ rightButton3.onclick = function () {
     document.getElementById('interest3').scrollLeft += 218;
 }
 }
+
+
     const interestModalButton = document.getElementById("interestModalButton");
     const addInterestModal = document.getElementById("addInterestModal");
     const closeModal = document.getElementById("closeModal");
@@ -105,6 +107,29 @@ rightButton3.onclick = function () {
                     let formInterestName = document.getElementById("interestName");
                     let formInterestId = document.getElementById("interestsId");
 
+                    
+                    selectedInterestName = bioItems[i].querySelector(".interestName").value;
+                    selectedInterestsId = bioItems[i].querySelector(".interestsId").value;
+
+                    $.ajax({
+                        type: "GET",
+                        url: "http://localhost/datingSite/includes/showSpecificInc.php",
+                        data: {interestName: selectedInterestName},
+                        success: function(data) {
+                            console.log(data);
+                            const parsedData = JSON.parse(data);
+                            for (let i=0; i < parsedData.length; i++){
+                                const specificDiv = document.createElement("div");
+                                specificDiv.innerText = parsedData[i];
+                                specificDiv.classList.add("specificDiv");
+                                interestMain.appendChild(specificDiv);
+                            }
+                        },
+                        error: function(err) {
+                            console.log(err);
+                        }
+                    });
+
                     selectedInterestsWrapper.addEventListener("click", function(event) {
                         if (event.target.classList.contains("addSpecific")) {
                             let interestWrapper = event.target.parentNode.parentNode.parentNode;
@@ -113,25 +138,6 @@ rightButton3.onclick = function () {
                             formInterestName.value = selectedInterestName;
                             formInterestId.value = selectedInterestsId;
                             addSpecificInterest.style.display = "block";
-
-                            $.ajax({
-                                type: "GET",
-                                url: "http://localhost/datingSite/includes/showSpecificInc.php",
-                                data: {interestName: selectedInterestName},
-                                success: function(data) {
-                                    console.log(data);
-                                    const parsedData = JSON.parse(data);
-                                    for (let i=0; i < parsedData.length; i++){
-                                        const specificDiv = document.createElement("div");
-                                        specificDiv.innerText = parsedData[i];
-                                        specificDiv.classList.add("specificDiv");
-                                        interestMain.appendChild(specificDiv);
-                                    }
-                                },
-                                error: function(err) {
-                                    console.log(err);
-                                }
-                            });
                         } 
 
                     
