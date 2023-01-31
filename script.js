@@ -113,26 +113,27 @@ rightButton3.onclick = function () {
                             formInterestName.value = selectedInterestName;
                             formInterestId.value = selectedInterestsId;
                             addSpecificInterest.style.display = "block";
+
+                            $.ajax({
+                                type: "GET",
+                                url: "http://localhost/datingSite/includes/showSpecificInc.php",
+                                data: {interestName: selectedInterestName},
+                                success: function(data) {
+                                    console.log(data);
+                                    const parsedData = JSON.parse(data);
+                                    for (let i=0; i < parsedData.length; i++){
+                                        const specificDiv = document.createElement("div");
+                                        specificDiv.innerText = parsedData[i];
+                                        specificDiv.classList.add("specificDiv");
+                                        interestMain.appendChild(specificDiv);
+                                    }
+                                },
+                                error: function(err) {
+                                    console.log(err);
+                                }
+                            });
                         } 
 
-                    $.ajax({
-                        type: "GET",
-                        url: "http://localhost/datingSite/includes/showSpecificInc.php",
-                        data: {interestName: selectedInterestName},
-                        success: function(data) {
-                            console.log(data);
-                            const parsedData = JSON.parse(data);
-                            for (let i=0; i < data.length; i++){
-                                const specificDiv = document.createElement("div");
-                                specificDiv.innerText = parsedData[i];
-                                specificDiv.classList.add("specificDiv");
-                                interestMain.appendChild(specificDiv);
-                            }
-                        },
-                        error: function(err) {
-                            console.log(err);
-                        }
-                    });
                     
                     });
                     
