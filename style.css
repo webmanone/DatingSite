@@ -897,8 +897,14 @@ h1 {
 
 .specificDiv {
   background-color: aqua;
-  text-align: center;
   border-style: solid;
   border-width: thin;
   border-radius: 50px;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  width: 130px;
+  text-align: center;
+  justify-content: center;
 }
