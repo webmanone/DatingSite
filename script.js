@@ -107,7 +107,6 @@ rightButton3.onclick = function () {
                     let formInterestName = document.getElementById("interestName");
                     let formInterestId = document.getElementById("interestsId");
 
-                    
                     selectedInterestName = bioItems[i].querySelector(".interestName").value;
                     selectedInterestsId = bioItems[i].querySelector(".interestsId").value;
 
@@ -148,6 +147,9 @@ rightButton3.onclick = function () {
                     addSpecificInterest.addEventListener("click", function(event) {
                     if (event.target.classList.contains("closeModal")) {
                         addSpecificInterest.style.display = "none";
+                    } else {
+                        document.getElementById("interestName") = selectedInterestName;
+                        document.getElementById("interestsId") = selectedInterestsId;
                     }
                     });
                 }else{
