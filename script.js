@@ -118,6 +118,16 @@ rightButton3.onclick = function () {
                     formInterestName.value = selectedInterestName;
                     formInterestId.value = selectedInterestsId;
 
+                    //saves selected interest categories in the local storage
+                    /*
+                    let selectedCategories = JSON.parse(localStorage.getItem('selectedCategories')) || [];
+                    selectedCategories.push({
+                        selectedInterestName,
+                        selectedInterestsId
+                    });
+                    localStorage.setItem('selectedCategories', JSON.stringify(selectedCategories));
+*/
+
                     //ajax request that retrieves the specific interests for each category and creates the div that the specific item will be shown in (within the big category div)
                     $.ajax({
                         type: "GET",
@@ -166,7 +176,16 @@ rightButton3.onclick = function () {
                     const interestWrapperId = `interestWrapper-${interestName}`;
                     const interestWrapperToRemove = document.getElementById(interestWrapperId);
                     selectedInterestsWrapper.removeChild(interestWrapperToRemove);
+
+                    //removes the selected interest from local storage by filtering out the item and saving the updated array
+                    /*
+                    let selectedInterestsId = bioItems[i].querySelector('.interestsId').value;
+                    let selectedCategories = JSON.parse(localStorage.getItem('selectedCategories')) || [];
+                    selectedCategories = selectedCategories.filter(selectedCategories => selectedCategories.selectedInterestsId !== selectedInterestsId);
+                    localStorage.setItem('selectedCategories', JSON.stringify(selectedCategories));
+                    */
                 }
+                //end of the active count else, this is if more than 3 divs are clicked
             } else {
                 if(!this.classList.contains('active')){
                     errorModal.style.display = "block";
@@ -182,6 +201,19 @@ rightButton3.onclick = function () {
         });
     }
 
+//loads the selected categories from local storage
+/*
+window.addEventListener('load', function() {
+    let selectedCategories = JSON.parse(localStorage.getItem('selectedCategories')) || [];
+    selectedCategories.forEach(function(selectedCategory) {
+      let bioItem = document.querySelector(`[value="${selectedCategory.selectedInterestsId}"]`);
+      if (bioItem) {
+        bioItem.classList.add('active');
+        activeCount++;
+      }
+    });
+  });
+*/
 //closes the error modal
 closeError.onclick = function() {
   errorModal.style.display = "none";

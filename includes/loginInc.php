@@ -19,3 +19,5 @@ else {
     header("location: ../login.php");
     exit();
 }
+
+//echo '<script> localStorage.clear(); </script>';
