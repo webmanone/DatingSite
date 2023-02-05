@@ -3,9 +3,9 @@ include_once 'dbhInc.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
-    $interestName = mysqli_real_escape_string($conn, $_GET["interestName"]);
+    $interestId = mysqli_real_escape_string($conn, $_GET["interestsId"]);
 
-    $sql = "SELECT itemsName FROM items WHERE itemsTitle = '$interestName'";
+    $sql = "SELECT itemsName FROM items WHERE interestsId = '$interestId'";
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {

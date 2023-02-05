@@ -133,7 +133,7 @@ rightButton3.onclick = function () {
                     $.ajax({
                         type: "GET",
                         url: "http://localhost/datingSite/includes/showSpecificInc.php",
-                        data: {interestName: selectedInterestName},
+                        data: {interestsId: selectedInterestsId},
                         success: function(data) {
                             console.log(data);
                             const parsedData = JSON.parse(data);
@@ -168,7 +168,7 @@ rightButton3.onclick = function () {
                                 type: "DELETE",
                                 url: "http://localhost/datingSite/includes/deleteSpecificInc.php",
                                 //needs to be edited, gtg
-                                data: {interestName: selectedInterestName},
+                                data: {interestName: selectedInterestsName},
                                 success: function(data) {
                                     console.log(data);
                                     const parsedData = JSON.parse(data);
