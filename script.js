@@ -152,6 +152,28 @@ rightButton3.onclick = function () {
                                 specificDeleteValue.setAttribute("type", "hidden");
                                 specificDeleteValue.setAttribute("value", parsedData[i]['itemsId']);
                                 specificDiv.appendChild(specificDeleteValue);
+
+                                selectedInterestsWrapper.addEventListener("click", function(event) {
+                                    if (event.target.classList.contains("specificDelete")){
+                                        //ajax request that sends delete request to the server
+                                        $.ajax({
+                                            type: "DELETE",
+                                            url: "http://localhost/datingSite/includes/deleteSpecificInc.php",
+                                            //needs to be edited
+                                            data: {itemsId: specificDeleteValue.value},
+                                            success: function(data) {
+                                                console.log(data);
+                                                const parsedData = JSON.parse(data);
+                                                if (parsedData.message) {
+                                                    $(specificDiv).remove();
+                                                }
+                                            },
+                                            error: function(err) {
+                                                console.log(err);
+                                            }
+                                        });
+                                    }
+                                });
                             }
                         },
                         error: function(err) {
@@ -167,33 +189,22 @@ rightButton3.onclick = function () {
                             console.log(formInterestId);
                         } 
                         //adding an event listener for the delete buttons on the specific interests dynamically added to the site
-                        else if (event.target.classList.contains("specificDelete")){
+                       /* else if (event.target.classList.contains("specificDelete")){
                             //ajax request that sends delete request to the server
                             $.ajax({
                                 type: "DELETE",
                                 url: "http://localhost/datingSite/includes/deleteSpecificInc.php",
-                                //needs to be edited, gtg
-                                data: {itemsId: selectedInterestsName},
+                                //needs to be edited
+                                data: {itemsId: specificDeleteValue.value},
                                 success: function(data) {
                                     console.log(data);
                                     const parsedData = JSON.parse(data);
-                                    for (let i=0; i < parsedData.length; i++){
-                                        const specificDiv = document.createElement("div");
-                                        specificDiv.innerText = parsedData[i];
-                                        specificDiv.classList.add("specificDiv");
-                                        interestMain.appendChild(specificDiv);
-        
-                                        const specificDelete = document.createElement("button");
-                                        specificDelete.innerHTML = "&times";
-                                        specificDelete.classList.add("specificDelete");
-                                        specificDiv.appendChild(specificDelete);
-                                    }
                                 },
                                 error: function(err) {
                                     console.log(err);
                                 }
                             });
-                        }
+                        }*/
                     });
                     
                     //
