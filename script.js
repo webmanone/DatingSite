@@ -145,6 +145,7 @@ rightButton3.onclick = function () {
 
                                 const specificDelete = document.createElement("button");
                                 specificDelete.innerHTML = "&times";
+                                specificDelete.classList.add("specificDelete");
                                 specificDiv.appendChild(specificDelete);
                             }
                         },
@@ -160,6 +161,34 @@ rightButton3.onclick = function () {
                             console.log(formInterestName);
                             console.log(formInterestId);
                         } 
+                        //adding an event listener for the delete buttons on the specific interests dynamically added to the site
+                        else if (event.target.classList.contains("specificDelete")){
+                            //ajax request that sends delete request to the server
+                            $.ajax({
+                                type: "DELETE",
+                                url: "http://localhost/datingSite/includes/deleteSpecificInc.php",
+                                //needs to be edited, gtg
+                                data: {interestName: selectedInterestName},
+                                success: function(data) {
+                                    console.log(data);
+                                    const parsedData = JSON.parse(data);
+                                    for (let i=0; i < parsedData.length; i++){
+                                        const specificDiv = document.createElement("div");
+                                        specificDiv.innerText = parsedData[i];
+                                        specificDiv.classList.add("specificDiv");
+                                        interestMain.appendChild(specificDiv);
+        
+                                        const specificDelete = document.createElement("button");
+                                        specificDelete.innerHTML = "&times";
+                                        specificDelete.classList.add("specificDelete");
+                                        specificDiv.appendChild(specificDelete);
+                                    }
+                                },
+                                error: function(err) {
+                                    console.log(err);
+                                }
+                            });
+                        }
                     });
                     
                     //
