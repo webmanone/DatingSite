@@ -139,7 +139,7 @@ rightButton3.onclick = function () {
                             const parsedData = JSON.parse(data);
                             for (let i=0; i < parsedData.length; i++){
                                 const specificDiv = document.createElement("div");
-                                specificDiv.innerText = parsedData[i];
+                                specificDiv.innerText = parsedData[i]['itemsName'];
                                 specificDiv.classList.add("specificDiv");
                                 interestMain.appendChild(specificDiv);
 
@@ -147,6 +147,11 @@ rightButton3.onclick = function () {
                                 specificDelete.innerHTML = "&times";
                                 specificDelete.classList.add("specificDelete");
                                 specificDiv.appendChild(specificDelete);
+
+                                const specificDeleteValue = document.createElement("INPUT");
+                                specificDeleteValue.setAttribute("type", "hidden");
+                                specificDeleteValue.setAttribute("value", parsedData[i]['itemsId']);
+                                specificDiv.appendChild(specificDeleteValue);
                             }
                         },
                         error: function(err) {
@@ -168,7 +173,7 @@ rightButton3.onclick = function () {
                                 type: "DELETE",
                                 url: "http://localhost/datingSite/includes/deleteSpecificInc.php",
                                 //needs to be edited, gtg
-                                data: {interestName: selectedInterestsName},
+                                data: {itemsId: selectedInterestsName},
                                 success: function(data) {
                                     console.log(data);
                                     const parsedData = JSON.parse(data);

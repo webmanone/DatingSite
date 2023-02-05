@@ -5,13 +5,18 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     $interestId = mysqli_real_escape_string($conn, $_GET["interestsId"]);
 
-    $sql = "SELECT itemsName FROM items WHERE interestsId = '$interestId'";
+    $sql = "SELECT itemsId, itemsName FROM items WHERE interestsId = '$interestId'";
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
         $specificInterests = array();
         while ($row = mysqli_fetch_assoc($result)) {
-            array_push($specificInterests, $row['itemsName']);
+            $item = array(
+                'itemsId' => $row['itemsId'],
+                'itemsName' => $row['itemsName']
+            );
+            array_push($specificInterests, $item);
+            //array_push($specificInterests, $row['itemsName']);
         }
         echo json_encode($specificInterests);
     }
