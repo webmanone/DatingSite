@@ -52,7 +52,6 @@ rightButton3.onclick = function () {
     const input = document.getElementById("interestsInput");
     const interestSubmit = document.getElementById("interestSubmit");
     const interestsBox = document.getElementById("interestsBox");
-    const deleteInterest = document.querySelectorAll('.delete');
     const interestsWrapper = document.getElementById("interestsWrapper");
     const errorModal = document.getElementById("errorModal");
     const closeError = document.getElementsByClassName("closeModal")[2];
@@ -106,7 +105,9 @@ rightButton3.onclick = function () {
                     const addSpecificInterest = document.querySelector(".addSpecificInterest");
                     
                     /*Declares variables which store the name and id of the interest category that has been selected by the user.               
-                    ?-- This works but should I use an array to store the values? The values will be overwritten when a new category is selected.--?  */
+                    ?-- This works but should I use an array to store the values? The values will be overwritten when a new category is selected.
+                    Edit: realised that it doesn't matter which add button is clicked, the specific interest will be saved to the last category selected.
+                    Fix: will need to store them in an array, pop and push when selected and deselected, and then make sure each add button has the relevant array reference--?  */
                     let selectedInterestName = bioItems[i].querySelector(".interestName").value;
                     let selectedInterestsId = bioItems[i].querySelector(".interestsId").value;
 
@@ -141,6 +142,10 @@ rightButton3.onclick = function () {
                                 specificDiv.innerText = parsedData[i];
                                 specificDiv.classList.add("specificDiv");
                                 interestMain.appendChild(specificDiv);
+
+                                const specificDelete = document.createElement("button");
+                                specificDelete.innerHTML = "&times";
+                                specificDiv.appendChild(specificDelete);
                             }
                         },
                         error: function(err) {

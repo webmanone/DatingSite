@@ -675,6 +675,7 @@ input[type=password] {
   transition: all 0.5s;
   border: none;
   padding: 0 0;
+  font-weight: bold;
 }
 
 .bioItem:hover button {
@@ -907,4 +908,33 @@ h1 {
   width: 130px;
   text-align: center;
   justify-content: center;
+  position: relative;
+  cursor: default;
+}
+
+.specificDiv button {
+  border-radius: 50%;
+  background-color: transparent;
+  position: absolute;
+  top: 6px;
+  right: 20px;
+  z-index: 3;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s;
+  border: none;
+  padding: 0 0;
+  font-size: large;
+  font-weight: bold;
+}
+
+.specificDiv:hover button {
+  visibility: visible;
+  opacity: 1;
+  cursor: pointer;
+  color: #484848;
+}
+
+.specificDiv button:hover {
+  color: black;
 }
