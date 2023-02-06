@@ -156,12 +156,15 @@ rightButton3.onclick = function () {
                                 selectedInterestsWrapper.addEventListener("click", function(event) {
                                     if (event.target.classList.contains("specificDelete")){
                                         //ajax request that sends delete request to the server
-                                        console.log(specificDeleteValue.value);
+                                        const specificDeleteValue = event.target.nextElementSibling.value;
+                                        const specificDiv = event.target.parentElement;
+                                        console.log(specificDeleteValue);
+                                        console.log(specificDiv);
                                         $.ajax({
                                             url: "http://localhost/datingSite/includes/deleteSpecificInc.php",
                                             type: "DELETE",
                                             //needs to be edited
-                                            data: JSON.stringify({itemsId: specificDeleteValue.value}),
+                                            data: JSON.stringify({itemsId: specificDeleteValue}),
                                             contentType: "application/json",
                                             success: function(data) {
                                                 console.log(data);
