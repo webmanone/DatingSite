@@ -894,6 +894,7 @@ h1 {
   border: medium solid;
   width: 40%;
   position: relative;
+  border-radius: 15px;
 }
 
 .specificDiv {
