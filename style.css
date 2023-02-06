@@ -2,7 +2,10 @@ body {
     background: rgba(214, 226, 249, 1);
     font-family: "Georgia", serif;
     margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
+
 h1 {
     text-align: center;
 }
@@ -13,6 +16,10 @@ button {
 
 td {
     padding: 0.5em;
+}
+
+li:hover {
+  background-color: darkblue;
 }
 
 .container {
@@ -75,6 +82,7 @@ td {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    z-index: 9;
 }
 
 li {
@@ -101,52 +109,833 @@ Was being seizury so commented out.
 */
 
   .active {
-    background-color: #f54242 ;
+    background-color: darkblue;
   }
 
   .gridContainer {
     display: grid;
-    grid-template-columns: auto min-content auto auto auto;
+    grid-template-columns: auto min-content auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
     grid-template-areas:
-    'header header header header header'
-    '. about . interest1 interest1'
-    '. about . interest2 interest2';
+    'header header header header header header'
+    '. about buttonLeft1 interest1 interest1 buttonRight1'
+    '. about buttonLeft2 interest2 interest2 buttonRight2 '
+    '. about buttonLeft3 interest3 interest3 buttonRight3 ';
     row-gap: 10px;
-    column-gap: 40px;
+    column-gap: 7vw;
   }
 
   .header {
     grid-area: header;
     text-align: center;
-  }
-
-  .about {
-    grid-area: about;
-    position: relative;
-    right: 5vw;
+    padding-top: 50px;
   }
   
-  .interest1 {
-    grid-area: interest1;
-    height: 60%;
-    position: relative;
-    right: 12vw;
-    top: 2vw;
+  .bioPic {
+    width: 50%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    top: 10px;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: medium;
+    border-radius: 50%;
+    padding: 0;
   }
 
-  .interest2 {
-    grid-area: interest2;
-    height: 60%;
+  .bio {
     position: relative;
-    right: 12vw;
-    top: 1vw;
+    top: 10px;
+    z-index: 0;
+    border-spacing: 0px 1rem;
+    object-fit: fill;
+    width: 100%;
   }
+
+  .interestsGrid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-areas:
+    'books videogames anime'
+    'sports movies tvshows';
+    place-self: center;
+    margin: auto;
+    width: 100%;
+    position: absolute;
+    top: 450px;
+    column-gap: 3px;
+    row-gap: 10px;
+  }
+
+.interestGridTitle {
+  position: relative;
+  text-align: center;
+  top: 10vh;
+}
+
+  .books {
+    grid-area: books;
+  }
+
+  .videogames {
+    grid-area: videogames;
+  }
+
+  .anime {
+    grid-area: anime;
+  }
+
+  .sports {
+    grid-area: sports;
+  }
+
+  .movies {
+    grid-area: movies;
+  }
+
+  .tvshows {
+    grid-area: tvshows;
+  }
+
+
+  .bioGrid {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-areas:
+    'firstName firstName age age gender gender'
+    'orientation orientation orientation location location location';
+    width: 100%;
+    column-gap: 3px;
+    row-gap: 10px;
+  }
+
+  .firstName {
+    grid-area: firstName;
+  }
+
+  .age {
+    grid-area: age;
+  }
+
+  .gender {
+    grid-area: gender;
+  }
+
+  .orientation {
+    grid-area: orientation;
+  }
+
+  .location {
+    grid-area: location;
+  }
+
+  .interest1 {
+    height: 80px;
+    position: relative;
+    right: 8vw;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    scroll-behavior: smooth;
+    gap: 4vw;
+    overflow: hidden;
+    padding-left: 4vw;
+    border-style: solid;
+    border-width: medium;
+    border-radius: 15px;
+  }
+
+  .interest1a {
+    grid-area: interest1;
+    position: relative;
+  }
+  
+.interest2a{
+  grid-area: interest2;
+  position: relative;
+  justify-content: center;
+  bottom: 1vw;
+}
+.interest2 {
+  height: 80px;
+  position: relative;
+  right: 8vw;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 4vw;
+  overflow: hidden;
+  padding-left: 4vw;
+  border-style: solid;
+  border-width: medium;
+  scroll-behavior: smooth;
+  border-radius: 15px;
+}
+
+.interest3a{
+  grid-area: interest3;
+  position: relative;
+  justify-content: center;
+  bottom: 2vw;
+}
+.interest3 {
+  height: 80px;
+  position: relative;
+  right: 8vw;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 4vw;
+  overflow: hidden;
+  padding-left: 4vw;
+  border-style: solid;
+  border-width: medium;
+  scroll-behavior: smooth;
+  border-radius: 15px;
+}
 
   .empty {
     grid-area: empty;
   }
 
-  .bio {
-    position: relative;
-    bottom: 10px;
+  .item {
+    float: left;
+    background-color: aqua;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 136px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    border-style: solid;
+    border-width: thin;
+    padding-right: 10px;
+    border-radius: 50px;
   }
+
+.buttonSize {
+  width: 4vw;
+  height: 4vh;
+}
+
+.buttonLeft1 {
+  grid-area: buttonLeft1;
+  z-index: 1;
+  position: absolute;
+  left: -12vw;
+  top: 38%;
+
+}
+
+.buttonLeft2 {
+  grid-area: buttonLeft2;
+  z-index: 1;
+  position: absolute;
+  left: -12vw;
+  top: 38%;
+
+}
+
+.buttonLeft3 {
+  grid-area: buttonLeft3;
+  z-index: 1;
+  position: absolute;
+  left: -12vw;
+  top: 38%;
+}
+
+
+.buttonRight1 {
+  grid-area: buttonRight;
+  z-index: 1;
+  position: absolute;
+  float: right;
+  right: 4vw;
+  top: 38%;
+}
+
+.buttonRight2 {
+  grid-area: buttonRight;
+  z-index: 1;
+  position: absolute;
+  float: right;
+  right: 4vw;
+  top: 38%;
+}
+
+.buttonRight3 {
+  grid-area: buttonRight;
+  z-index: 1;
+  position: absolute;
+  float: right;
+  right: 4vw;
+  top: 38%;
+}
+
+.bottomBorder {
+  border-bottom: solid;
+  position: relative;
+  z-index: 2;
+}
+
+.signupForm {
+  border-radius: 5px;
+  background-color: rgba(141, 177, 227, 1);
+  padding: 20px;
+  position: relative;
+  top: 100px;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  border-style: solid;
+  border-width: medium;
+}
+
+input {
+  font-family: "Georgia", serif;
+  border: 1px solid #000;
+}
+
+select {
+  font-family: "Georgia", serif;
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #000; 
+}
+
+select:required:invalid {
+  color: grey;
+}
+
+option[value=""][disabled]{
+  color: grey;
+}
+
+option {
+  color: black;
+}
+
+
+input[type=text] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input[type=tel] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button[type=submit] {
+  width: 20%;
+  background-color:aqua;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+input[type=date] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: "Georgia", serif;
+}
+
+
+input[type="date"]:before {
+  color: grey;
+  margin-right: 0.5em;
+  font-family: "Georgia", serif;
+}
+
+
+input[type=password] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.capitaliseFirst {
+  text-transform: lowercase;
+}
+
+.capitaliseFirst::first-letter {
+  text-transform: uppercase;
+}
+
+.userGridContainer {
+  display: grid;
+  grid-template-columns: min-content auto auto;
+  grid-template-areas:
+  'header header header'
+  'about selectedInterestsWrapper selectedInterestsWrapper '
+  'interestsWrapper selectedInterestsWrapper selectedInterestsWrapper';
+  column-gap: 15vw;
+  z-index: 1;
+  position: relative;
+}
+
+.about {
+  grid-area: about;
+  position: relative;
+  border-style: solid;
+  border-width: medium;
+  background-color: rgba(141, 177, 227, 1);
+  height: 300px;
+  width: 100%;
+  border-radius: 15px;
+  left: 4vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 50px;
+}
+
+.interestsWrapper {
+  position: relative;
+  grid-area: interestsWrapper;
+  left: 4vw;
+  top: 40px;
+}
+
+.interestsTitle {
+  position:absolute;
+  border-style: solid;
+  border-width: medium;
+  background-color: rgba(141, 177, 227, 1);
+  border-radius: 15px;
+  width: min-content;
+  height: min-content;
+  padding: 10px;
+  top: -10px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+}
+.interestsBox {
+  border-style: solid;
+  border-width: medium;
+  background-color: rgba(141, 177, 227, 1);
+  height: min-content;
+  width: 100%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-self: center;
+  display: flex;
+  position: absolute;
+  padding-top: 22px;
+  z-index: -1;
+}
+
+.interestModalButton {
+  float: right;
+  z-index: 1;
+  background-color:aqua;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: thin;
+  height: 35px;
+  width: 35px;
+  text-align: center;
+  vertical-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  position: relative;
+  left: 19px;
+  bottom: 10px;
+  cursor: pointer;
+}
+
+.addInterestModal {
+  display: none;
+  position: fixed;
+  z-index: 9;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4);
+}
+
+.interestModalContent {
+  background-color: rgba(141, 177, 227, 1);
+  margin: 20% auto;
+  padding: 20px;
+  border: medium solid;
+  width: 40%;
+  position: relative;
+}
+
+.closeModal {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #484848;
+}
+
+.closeModal:hover,
+.closeModal:focus{
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.aboutItem {
+  border-style: solid;
+  border-width: thin;
+  text-align: center;
+  padding: 15px;
+  border-radius: 20px;
+  background-color: aqua;
+  margin: 5px;
+  flex: max-content;
+  position: relative;
+  z-index: 2;
+  cursor: default;
+}
+
+.bioItem {
+    border-style: solid;
+    border-width: 1px;
+    text-align: center;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: aqua;
+    margin: 5px;
+    flex: max-content;
+    position: relative;
+    z-index: 2;
+    cursor: default;
+    box-shadow: none;
+    user-select: none;
+  }
+
+  .bioItem:hover, bioItem:active {
+    border-color: blue;
+    box-shadow: inset 0 0 10px blue;
+  }
+
+  .bioItem.active {
+    border-color: blue;
+    box-shadow: inset 0 0 10px blue;
+  }
+
+.bioItem button {
+  border-radius: 50%;
+  background-color: transparent;
+  position: absolute;
+  top: 2px;
+  right: 8px;
+  z-index: 3;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s;
+  border: none;
+  padding: 0 0;
+  font-weight: bold;
+}
+
+.bioItem:hover button {
+  visibility: visible;
+  opacity: 1;
+  cursor: pointer;
+  color: #484848;
+}
+
+.bioItem button:hover {
+  color: black;
+}
+
+h1 {
+  font-size: xx-large;
+}
+
+.indexDiv {
+  text-align: center;
+  padding: 100px;
+  font-size: xx-large;
+  font-weight: 500;
+}
+
+.indexDiv2 {
+  text-align: center;
+  padding: 50px;
+  font-size: xx-large;
+  font-weight: 500;
+  width: 50%;
+  border: solid 1px lightblue;
+  margin: auto;
+  border-radius: 20px;
+  position: relative;
+  top: 60px;
+  background-color: aqua;
+}
+
+.enlarge {
+  transition: .4s;
+}
+
+.enlarge:hover {
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1); 
+  transform: scale(1.1); 
+}
+
+.indexLink {
+  color: black;
+  transition: .2s;
+}
+
+.indexLink:hover {
+  color: blue;
+}
+
+.heartContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heart {
+  background-color: blue;
+  display: inline-block;
+  height: 50px;
+  position: relative;
+  top: 0;
+  transform: rotate(-45deg);
+  width: 50px;
+  animation: heartbeat 2s infinite;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  background-color: blue;
+  border-radius: 50%;
+  height: 50px;
+  position: absolute;
+  width: 50px;
+}
+
+.heart:before {
+  top: -25px;
+  left: 0;
+}
+
+.heart:after {
+  left: 25px;
+  top: 0;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale( 1 )
+    rotate(-45deg);   
+  }
+  25% {
+    transform: scale( 1.25 ) 
+      translateX(5%) 
+      translateY(5%)
+      rotate(-45deg);
+  } 
+  30% {
+    transform: scale( 1.5 ) 
+      translateX(9%) 
+      translateY(10%)
+      rotate(-45deg);
+      
+  }
+}
+
+.errorModal {
+  display: none;
+  position: fixed;
+  z-index: 100; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4);
+}
+
+
+.errorModalContent {
+  background-color: rgba(141, 177, 227, 1);
+  margin: 20% auto;
+  padding: 20px;
+  border: medium solid;
+  width: 40%;
+  position: relative;
+}
+
+.selectedInterestsWrapper {
+  grid-area: selectedInterestsWrapper;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  position: absolute;
+  width: 80%;
+  top: 25px;
+}
+
+.interestWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.interestTitle {
+  font-size: large;
+  font-weight: bold;
+  position: relative;
+  top: 30px;
+}
+
+.interestMain {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  scroll-behavior: smooth;
+  gap: 4vw;
+  overflow: hidden;
+  border-style: solid;
+  border-width: medium;
+  border-radius: 15px;
+  background-color: rgba(141, 177, 227, 1); 
+}
+
+.addSpecific {
+  border-radius: 50%;
+  background-color: aqua;
+  height: 35px;
+  width: 35px;
+  font-size: 25px;
+  font-weight: bold;
+  border-width: thin;
+  cursor: pointer;
+  align-self: flex-end;
+  position: relative;
+  top: 20px;
+  left: 15px;
+}
+.userNameTitle {
+  font-size: xx-large;
+  font-weight: bold;
+  position: relative;
+  text-align: center;
+  bottom: 40px;
+}
+
+.addSpecificInterest {
+  display: none;
+  position: fixed;
+  z-index: 9;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4);
+}
+
+.specificInterestContent {
+  background-color: rgba(141, 177, 227, 1);
+  margin: 20% auto;
+  padding: 20px;
+  border: medium solid;
+  width: 40%;
+  position: relative;
+  border-radius: 15px;
+}
+
+.specificDiv {
+  background-color: aqua;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 50px;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  width: 130px;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  cursor: default;
+}
+
+.specificDiv button {
+  border-radius: 50%;
+  background-color: transparent;
+  position: absolute;
+  top: 6px;
+  right: 20px;
+  z-index: 3;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s;
+  border: none;
+  padding: 0 0;
+  font-size: large;
+  font-weight: bold;
+}
+
+.specificDiv:hover button {
+  visibility: visible;
+  opacity: 1;
+  cursor: pointer;
+  color: #484848;
+}
+
+.specificDiv button:hover {
+  color: black;
+}
