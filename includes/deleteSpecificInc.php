@@ -1,25 +1,19 @@
 <?php
+
 include_once 'dbhInc.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "DELETE") {
-    if (!isset($_GET["itemsId"])) {
-        echo json_encode(array("message" => "Error deleting specific item: No item ID received"));
-        exit;
-    }
-    $itemsId = mysqli_real_escape_string($conn, $_GET["itemsId"]);
+   
+    $data = json_decode(file_get_contents("php://input"), true);
+    $itemsId = $data['itemsId'];
 
-    $sql_select = "SELECT * FROM items WHERE itemsId = '$itemsId'";
-    $result_select = mysqli_query($conn, $sql_select);
-    if (mysqli_num_rows($result_select) > 0) {
-        $sql = "DELETE FROM items WHERE itemsId = '$itemsId'";
-        $result = mysqli_query($conn, $sql);
+    $sql = "DELETE FROM items WHERE itemsId = '$itemsId'";
 
-        if ($result) {
-            echo json_encode(array("message" => "Specific item deleted successfully"));
-        } else {
-            echo json_encode(array("message" => "Error deleting specific item"));
-        }
-    } else {
-        echo json_encode(array("message" => "Error deleting specific item: Item does not exist"));
+    if (mysqli_query($conn, $sql)) {
+        echo json_encode(array("status" => "success"));
+      } else {
+        echo json_encode(array("status" => "error", "message" => mysqli_error($conn)));
+      }
+      
     }
-}
+    
