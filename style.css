@@ -654,13 +654,13 @@ input[type=password] {
   }
 
   .bioItem:hover, bioItem:active {
-    border-color: blue;
-    box-shadow: inset 0 0 10px blue;
+    border-color: rgb(103, 162, 245);
+    box-shadow: inset 0 0 10px rgb(103, 162, 245);
   }
 
   .bioItem.active {
-    border-color: blue;
-    box-shadow: inset 0 0 10px blue;
+    border-color: rgb(103, 162, 245);
+    box-shadow: inset 0 0 10px rgb(103, 162, 245);
   }
 
 .bioItem button {

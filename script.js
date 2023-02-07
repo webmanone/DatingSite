@@ -81,6 +81,13 @@ rightButton3.onclick = function () {
                     //gets the category name from the selected category and removes the html and text from the delete button
                     const interestName = this.textContent.split("×")[0].trim();
 
+                    /*Declares variables which store the name and id of the interest category that has been selected by the user.               
+                    ?-- This works but should I use an array to store the values? The values will be overwritten when a new category is selected.
+                    Edit: realised that it doesn't matter which add button is clicked, the specific interest will be saved to the last category selected.
+                    Fix: will need to store them in an array, pop and push when selected and deselected, and then make sure each add button has the relevant array reference--?  */
+                    let selectedInterestName = bioItems[i].querySelector(".interestName").value;
+                    let selectedInterestsId = bioItems[i].querySelector(".interestsId").value;
+
                     /*adds html to the webpage, these elements combined make a div that will contain the specific interests related to the category, including an add button that will
                     allow the user to add specific interests.
                     ?-- A way to make this more efficient could be having 3 divs already in the html, but show different information (and change from hidden to visible) when each div is 
@@ -96,6 +103,7 @@ rightButton3.onclick = function () {
                     const addInterest = document.createElement("button");
                     addInterest.classList.add("addSpecific");
                     addInterest.innerHTML = `+`;
+                    addInterest.setAttribute("value", selectedInterestsId);
                     interestWrapper.appendChild(interestTitle);
                     interestWrapper.appendChild(addInterest);
                     interestWrapper.appendChild(interestMain);
@@ -104,12 +112,6 @@ rightButton3.onclick = function () {
                     //this declares a modal that is already in the html that allows the user to add a specific interest to the categories
                     const addSpecificInterest = document.querySelector(".addSpecificInterest");
                     
-                    /*Declares variables which store the name and id of the interest category that has been selected by the user.               
-                    ?-- This works but should I use an array to store the values? The values will be overwritten when a new category is selected.
-                    Edit: realised that it doesn't matter which add button is clicked, the specific interest will be saved to the last category selected.
-                    Fix: will need to store them in an array, pop and push when selected and deselected, and then make sure each add button has the relevant array reference--?  */
-                    let selectedInterestName = bioItems[i].querySelector(".interestName").value;
-                    let selectedInterestsId = bioItems[i].querySelector(".interestsId").value;
 
                     //declares the hidden inputs from the modal that will store the name and id of the category selected by the user
                     let formInterestName = document.getElementById("interestName");
@@ -190,8 +192,9 @@ rightButton3.onclick = function () {
                     selectedInterestsWrapper.addEventListener("click", function(event) {
                         if (event.target.classList.contains("addSpecific")) {
                             addSpecificInterest.style.display = "block";
-                            console.log(formInterestName);
-                            console.log(formInterestId);
+                            const addId = event.target.value;
+                            console.log(addId);
+                            console.log(event.target.value);
                         } 
                         //adding an event listener for the delete buttons on the specific interests dynamically added to the site
                        /* else if (event.target.classList.contains("specificDelete")){
