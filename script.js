@@ -188,14 +188,35 @@ rightButton3.onclick = function () {
                         }
                     });
 
+                    const specificSubmit = document.getElementById("specificSubmit");
                     //displays the modal that allows the user to add a specific interest to the category
                     selectedInterestsWrapper.addEventListener("click", function(event) {
                         if (event.target.classList.contains("addSpecific")) {
-                            addSpecificInterest.style.display = "block";
-                            const addId = event.target.value;
-                            console.log(addId);
-                            console.log(event.target.value);
-                        } 
+                          addSpecificInterest.style.display = "block";
+                          const addId = event.target.value;
+                          console.log(addId);
+                          console.log(event.target.value);
+                      
+                          selectedInterestsWrapper.addEventListener("click", function(event) {
+                            $.ajax({
+                              url: "http://localhost/datingSite/includes/addSpecificInc.php",
+                              type: "POST",
+                              data: JSON.stringify({interestsId: addId}),
+                              contentType: "application/json",
+                              success: function(data) {
+                                console.log(data);
+                                const parsedData = JSON.parse(data);
+                                if (parsedData.status === "success") {
+                                  $(specificDiv).remove();
+                                }
+                              },
+                              error: function(err) {
+                                console.log(err);
+                              }
+                            });
+                          });
+                        }
+                      });
                         //adding an event listener for the delete buttons on the specific interests dynamically added to the site
                        /* else if (event.target.classList.contains("specificDelete")){
                             //ajax request that sends delete request to the server
