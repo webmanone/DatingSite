@@ -71,6 +71,7 @@ rightButton3.onclick = function () {
     let activeCount = 0;
 
     //for loop that cycles through all the interest categories and adds an event listener to each one. If the number of active categories is 3 or less, it runs a function when clicke
+    
     for (let i = 0; i < bioItems.length; i++) {
         bioItems[i].addEventListener('click', function() {
             if (activeCount < 3) {
@@ -104,6 +105,7 @@ rightButton3.onclick = function () {
                     addInterest.classList.add("addSpecific");
                     addInterest.innerHTML = `+`;
                     addInterest.setAttribute("value", selectedInterestsId);
+                    addInterest.setAttribute("name", selectedInterestName);
                     interestWrapper.appendChild(interestTitle);
                     interestWrapper.appendChild(addInterest);
                     interestWrapper.appendChild(interestMain);
@@ -132,6 +134,7 @@ rightButton3.onclick = function () {
 */
 
                     //ajax request that retrieves the specific interests for each category and creates the div that the specific item will be shown in (within the big category div)
+                    
                     $.ajax({
                         type: "GET",
                         url: "http://localhost/datingSite/includes/showSpecificInc.php",
@@ -188,33 +191,41 @@ rightButton3.onclick = function () {
                         }
                     });
 
-                    const specificSubmit = document.getElementById("specificSubmit");
                     //displays the modal that allows the user to add a specific interest to the category
                     selectedInterestsWrapper.addEventListener("click", function(event) {
                         if (event.target.classList.contains("addSpecific")) {
                           addSpecificInterest.style.display = "block";
-                          const addId = event.target.value;
+                          var addId = event.target.value;
+                          var addName = event.target.name;
                           console.log(addId);
-                          console.log(event.target.value);
+                          console.log(addName);
                       
-                          selectedInterestsWrapper.addEventListener("click", function(event) {
+                          $("#addSpecificForm").submit(function(e) {
+                            e.preventDefault();
+                            var interestsId = addId;
+                            //var userId = $("input[name='userId']").val();
+                            var itemsTitle = addName;
+                            var itemsName = $("input[name='specificInterest']").val();
+                            console.log(interestsId);
+                            console.log(itemsTitle);
+                            console.log(itemsName);
                             $.ajax({
-                              url: "http://localhost/datingSite/includes/addSpecificInc.php",
-                              type: "POST",
-                              data: JSON.stringify({interestsId: addId}),
-                              contentType: "application/json",
-                              success: function(data) {
-                                console.log(data);
-                                const parsedData = JSON.parse(data);
-                                if (parsedData.status === "success") {
-                                  $(specificDiv).remove();
+                                type: "POST",
+                                url: "http://localhost/datingSite/includes/addSpecificInc.php",
+                                data: {
+                                    interestsId: interestsId,
+                                    //userId: userId,
+                                    itemsTitle: itemsTitle,
+                                    itemsName: itemsName
+                                },
+                                success: function(data) {
+                                    console.log(data);
+                                    addSpecificInterest.style.display = "none";
                                 }
-                              },
-                              error: function(err) {
-                                console.log(err);
-                              }
                             });
-                          });
+                            return false;
+                        });
+                        
                         }
                       });
                         //adding an event listener for the delete buttons on the specific interests dynamically added to the site
@@ -234,7 +245,6 @@ rightButton3.onclick = function () {
                                 }
                             });
                         }*/
-                    });
                     
                     //
                     addSpecificInterest.addEventListener("click", function(event) {
