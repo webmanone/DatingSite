@@ -296,8 +296,8 @@ const specificForm = document.getElementById("addSpecificForm");
                     selectedInterestsWrapper.addEventListener("click", function(event) {
                         if (event.target.classList.contains("addSpecific")) {
                           addSpecificInterest.style.display = "block";
-                          var addId = event.target.value;
-                          var addName = event.target.name;
+                          let addId = event.target.value;
+                          let addName = event.target.name;
                           console.log(addId);
                           console.log(addName);
                       
@@ -323,6 +323,11 @@ const specificForm = document.getElementById("addSpecificForm");
                                     console.log(data);
                                     addSpecificInterest.style.display = "none";
                                     specificForm.reset();
+                                    interestsId = undefined;
+                                    itemsTitle = undefined;
+                                    itemsName = undefined;
+                                    addId = undefined;
+                                    addName = undefined;
                                 }
                             });
                             return false;
@@ -330,7 +335,59 @@ const specificForm = document.getElementById("addSpecificForm");
                         
                         }
                       });
+/*
 
+                      const specificForm = document.getElementById("addSpecificForm");
+
+
+                      //displays the modal that allows the user to add a specific interest to the category
+                                          selectedInterestsWrapper.addEventListener("click", function(event){
+                                              
+                                          if (event.target.classList.contains("addSpecific")){
+                                          let addButtons = event.target;
+                      
+                                          Array.from(addButtons).forEach(element => {
+                                          element.addEventListener('click', () => {
+                      
+                                                addSpecificInterest.style.display = "block";
+                                                let addId = element.value;
+                                                let addName = element.name;
+                                                console.log(addId);
+                                                console.log(addName);
+                                            
+                                                $("#addSpecificForm").submit(function(e) {
+                                                  e.preventDefault();
+                                                  let interestsId = addId;
+                                                  //var userId = $("input[name='userId']").val();
+                                                  let itemsTitle = addName;
+                                                  let itemsName = $("input[name='specificInterest']").val();
+                                                  console.log(interestsId);
+                                                  console.log(itemsTitle);
+                                                  console.log(itemsName);
+                                                  $.ajax({
+                                                      type: "POST",
+                                                      url: "http://localhost/datingSite/includes/addSpecificInc.php",
+                                                      data: {
+                                                          interestsId: interestsId,
+                                                          //userId: userId,
+                                                          itemsTitle: itemsTitle,
+                                                          itemsName: itemsName
+                                                      },
+                                                      success: function(data) {
+                                                          console.log(data);
+                                                          addSpecificInterest.style.display = "none";
+                                                          specificForm.reset();
+                                                      }
+                                                  });
+                                                  return false;
+                                              });
+                                              
+                                           
+                                          });
+                                      });
+                                          }
+                                  });
+                                  */
 
 //loads the selected categories from local storage
 /*
