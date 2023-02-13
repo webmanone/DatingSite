@@ -123,16 +123,6 @@ rightButton3.onclick = function () {
                     formInterestName.value = selectedInterestName;
                     formInterestId.value = selectedInterestsId;
 
-                    //saves selected interest categories in the local storage
-                    /*
-                    let selectedCategories = JSON.parse(localStorage.getItem('selectedCategories')) || [];
-                    selectedCategories.push({
-                        selectedInterestName,
-                        selectedInterestsId
-                    });
-                    localStorage.setItem('selectedCategories', JSON.stringify(selectedCategories));
-*/
-
                     //ajax request that retrieves the specific interests for each category and creates the div that the specific item will be shown in (within the big category div)
                     
                     $.ajax({
@@ -190,64 +180,7 @@ rightButton3.onclick = function () {
                             console.log(err);
                         }
                     });
-/*
-                    //displays the modal that allows the user to add a specific interest to the category
-                    selectedInterestsWrapper.addEventListener("click", function(event) {
-                        if (event.target.classList.contains("addSpecific")) {
-                          addSpecificInterest.style.display = "block";
-                          var addId = event.target.value;
-                          var addName = event.target.name;
-                          console.log(addId);
-                          console.log(addName);
-                      
-                          $("#addSpecificForm").submit(function(e) {
-                            e.preventDefault();
-                            var interestsId = addId;
-                            //var userId = $("input[name='userId']").val();
-                            var itemsTitle = addName;
-                            var itemsName = $("input[name='specificInterest']").val();
-                            console.log(interestsId);
-                            console.log(itemsTitle);
-                            console.log(itemsName);
-                            $.ajax({
-                                type: "POST",
-                                url: "http://localhost/datingSite/includes/addSpecificInc.php",
-                                data: {
-                                    interestsId: interestsId,
-                                    //userId: userId,
-                                    itemsTitle: itemsTitle,
-                                    itemsName: itemsName
-                                },
-                                success: function(data) {
-                                    console.log(data);
-                                    addSpecificInterest.style.display = "none";
-                                }
-                            });
-                            return false;
-                        });
-                        
-                        }
-                      });
-                      */
-                        //adding an event listener for the delete buttons on the specific interests dynamically added to the site
-                       /* else if (event.target.classList.contains("specificDelete")){
-                            //ajax request that sends delete request to the server
-                            $.ajax({
-                                type: "DELETE",
-                                url: "http://localhost/datingSite/includes/deleteSpecificInc.php",
-                                //needs to be edited
-                                data: {itemsId: specificDeleteValue.value},
-                                success: function(data) {
-                                    console.log(data);
-                                    const parsedData = JSON.parse(data);
-                                },
-                                error: function(err) {
-                                    console.log(err);
-                                }
-                            });
-                        }*/
-                    
-                    //
+
                     addSpecificInterest.addEventListener("click", function(event) {
                         if (event.target.classList.contains("closeModal")) {
                             addSpecificInterest.style.display = "none";
@@ -267,13 +200,6 @@ rightButton3.onclick = function () {
                     const interestWrapperToRemove = document.getElementById(interestWrapperId);
                     selectedInterestsWrapper.removeChild(interestWrapperToRemove);
 
-                    //removes the selected interest from local storage by filtering out the item and saving the updated array
-                    /*
-                    let selectedInterestsId = bioItems[i].querySelector('.interestsId').value;
-                    let selectedCategories = JSON.parse(localStorage.getItem('selectedCategories')) || [];
-                    selectedCategories = selectedCategories.filter(selectedCategories => selectedCategories.selectedInterestsId !== selectedInterestsId);
-                    localStorage.setItem('selectedCategories', JSON.stringify(selectedCategories));
-                    */
                 }
                 //end of the active count else, this is if more than 3 divs are clicked
             } else {
@@ -328,6 +254,8 @@ const specificForm = document.getElementById("addSpecificForm");
                                     itemsName = undefined;
                                     addId = undefined;
                                     addName = undefined;
+
+                                    
                                 }
                             });
                             return false;
