@@ -71,6 +71,7 @@ rightButton3.onclick = function () {
     let activeCount = 0;
 
     //for loop that cycles through all the interest categories and adds an event listener to each one. If the number of active categories is 3 or less, it runs a function when clicke
+    
     for (let i = 0; i < bioItems.length; i++) {
         bioItems[i].addEventListener('click', function() {
             if (activeCount < 3) {
@@ -80,6 +81,13 @@ rightButton3.onclick = function () {
 
                     //gets the category name from the selected category and removes the html and text from the delete button
                     const interestName = this.textContent.split("×")[0].trim();
+
+                    /*Declares variables which store the name and id of the interest category that has been selected by the user.               
+                    ?-- This works but should I use an array to store the values? The values will be overwritten when a new category is selected.
+                    Edit: realised that it doesn't matter which add button is clicked, the specific interest will be saved to the last category selected.
+                    Fix: will need to store them in an array, pop and push when selected and deselected, and then make sure each add button has the relevant array reference--?  */
+                    let selectedInterestName = bioItems[i].querySelector(".interestName").value;
+                    let selectedInterestsId = bioItems[i].querySelector(".interestsId").value;
 
                     /*adds html to the webpage, these elements combined make a div that will contain the specific interests related to the category, including an add button that will
                     allow the user to add specific interests.
@@ -96,6 +104,8 @@ rightButton3.onclick = function () {
                     const addInterest = document.createElement("button");
                     addInterest.classList.add("addSpecific");
                     addInterest.innerHTML = `+`;
+                    addInterest.setAttribute("value", selectedInterestsId);
+                    addInterest.setAttribute("name", selectedInterestName);
                     interestWrapper.appendChild(interestTitle);
                     interestWrapper.appendChild(addInterest);
                     interestWrapper.appendChild(interestMain);
@@ -104,12 +114,6 @@ rightButton3.onclick = function () {
                     //this declares a modal that is already in the html that allows the user to add a specific interest to the categories
                     const addSpecificInterest = document.querySelector(".addSpecificInterest");
                     
-                    /*Declares variables which store the name and id of the interest category that has been selected by the user.               
-                    ?-- This works but should I use an array to store the values? The values will be overwritten when a new category is selected.
-                    Edit: realised that it doesn't matter which add button is clicked, the specific interest will be saved to the last category selected.
-                    Fix: will need to store them in an array, pop and push when selected and deselected, and then make sure each add button has the relevant array reference--?  */
-                    let selectedInterestName = bioItems[i].querySelector(".interestName").value;
-                    let selectedInterestsId = bioItems[i].querySelector(".interestsId").value;
 
                     //declares the hidden inputs from the modal that will store the name and id of the category selected by the user
                     let formInterestName = document.getElementById("interestName");
@@ -119,17 +123,8 @@ rightButton3.onclick = function () {
                     formInterestName.value = selectedInterestName;
                     formInterestId.value = selectedInterestsId;
 
-                    //saves selected interest categories in the local storage
-                    /*
-                    let selectedCategories = JSON.parse(localStorage.getItem('selectedCategories')) || [];
-                    selectedCategories.push({
-                        selectedInterestName,
-                        selectedInterestsId
-                    });
-                    localStorage.setItem('selectedCategories', JSON.stringify(selectedCategories));
-*/
-
                     //ajax request that retrieves the specific interests for each category and creates the div that the specific item will be shown in (within the big category div)
+                    
                     $.ajax({
                         type: "GET",
                         url: "http://localhost/datingSite/includes/showSpecificInc.php",
@@ -186,33 +181,6 @@ rightButton3.onclick = function () {
                         }
                     });
 
-                    //displays the modal that allows the user to add a specific interest to the category
-                    selectedInterestsWrapper.addEventListener("click", function(event) {
-                        if (event.target.classList.contains("addSpecific")) {
-                            addSpecificInterest.style.display = "block";
-                            console.log(formInterestName);
-                            console.log(formInterestId);
-                        } 
-                        //adding an event listener for the delete buttons on the specific interests dynamically added to the site
-                       /* else if (event.target.classList.contains("specificDelete")){
-                            //ajax request that sends delete request to the server
-                            $.ajax({
-                                type: "DELETE",
-                                url: "http://localhost/datingSite/includes/deleteSpecificInc.php",
-                                //needs to be edited
-                                data: {itemsId: specificDeleteValue.value},
-                                success: function(data) {
-                                    console.log(data);
-                                    const parsedData = JSON.parse(data);
-                                },
-                                error: function(err) {
-                                    console.log(err);
-                                }
-                            });
-                        }*/
-                    });
-                    
-                    //
                     addSpecificInterest.addEventListener("click", function(event) {
                         if (event.target.classList.contains("closeModal")) {
                             addSpecificInterest.style.display = "none";
@@ -232,13 +200,6 @@ rightButton3.onclick = function () {
                     const interestWrapperToRemove = document.getElementById(interestWrapperId);
                     selectedInterestsWrapper.removeChild(interestWrapperToRemove);
 
-                    //removes the selected interest from local storage by filtering out the item and saving the updated array
-                    /*
-                    let selectedInterestsId = bioItems[i].querySelector('.interestsId').value;
-                    let selectedCategories = JSON.parse(localStorage.getItem('selectedCategories')) || [];
-                    selectedCategories = selectedCategories.filter(selectedCategories => selectedCategories.selectedInterestsId !== selectedInterestsId);
-                    localStorage.setItem('selectedCategories', JSON.stringify(selectedCategories));
-                    */
                 }
                 //end of the active count else, this is if more than 3 divs are clicked
             } else {
@@ -255,6 +216,106 @@ rightButton3.onclick = function () {
             }
         });
     }
+
+const specificForm = document.getElementById("addSpecificForm");
+//displays the modal that allows the user to add a specific interest to the category
+                    selectedInterestsWrapper.addEventListener("click", function(event) {
+                        if (event.target.classList.contains("addSpecific")) {
+                          addSpecificInterest.style.display = "block";
+                          let addId = event.target.value;
+                          let addName = event.target.name;
+                          console.log(addId);
+                          console.log(addName);
+                      
+                          $("#addSpecificForm").submit(function(e) {
+                            e.preventDefault();
+                            let interestsId = addId;
+                            //var userId = $("input[name='userId']").val();
+                            let itemsTitle = addName;
+                            let itemsName = $("input[name='specificInterest']").val();
+                            console.log(interestsId);
+                            console.log(itemsTitle);
+                            console.log(itemsName);
+                            $.ajax({
+                                type: "POST",
+                                url: "http://localhost/datingSite/includes/addSpecificInc.php",
+                                data: {
+                                    interestsId: interestsId,
+                                    //userId: userId,
+                                    itemsTitle: itemsTitle,
+                                    itemsName: itemsName
+                                },
+                                success: function(data) {
+                                    console.log(data);
+                                    addSpecificInterest.style.display = "none";
+                                    specificForm.reset();
+                                    interestsId = undefined;
+                                    itemsTitle = undefined;
+                                    itemsName = undefined;
+                                    addId = undefined;
+                                    addName = undefined;
+
+                                    
+                                }
+                            });
+                            return false;
+                        });
+                        
+                        }
+                      });
+/*
+
+                      const specificForm = document.getElementById("addSpecificForm");
+
+
+                      //displays the modal that allows the user to add a specific interest to the category
+                                          selectedInterestsWrapper.addEventListener("click", function(event){
+                                              
+                                          if (event.target.classList.contains("addSpecific")){
+                                          let addButtons = event.target;
+                      
+                                          Array.from(addButtons).forEach(element => {
+                                          element.addEventListener('click', () => {
+                      
+                                                addSpecificInterest.style.display = "block";
+                                                let addId = element.value;
+                                                let addName = element.name;
+                                                console.log(addId);
+                                                console.log(addName);
+                                            
+                                                $("#addSpecificForm").submit(function(e) {
+                                                  e.preventDefault();
+                                                  let interestsId = addId;
+                                                  //var userId = $("input[name='userId']").val();
+                                                  let itemsTitle = addName;
+                                                  let itemsName = $("input[name='specificInterest']").val();
+                                                  console.log(interestsId);
+                                                  console.log(itemsTitle);
+                                                  console.log(itemsName);
+                                                  $.ajax({
+                                                      type: "POST",
+                                                      url: "http://localhost/datingSite/includes/addSpecificInc.php",
+                                                      data: {
+                                                          interestsId: interestsId,
+                                                          //userId: userId,
+                                                          itemsTitle: itemsTitle,
+                                                          itemsName: itemsName
+                                                      },
+                                                      success: function(data) {
+                                                          console.log(data);
+                                                          addSpecificInterest.style.display = "none";
+                                                          specificForm.reset();
+                                                      }
+                                                  });
+                                                  return false;
+                                              });
+                                              
+                                           
+                                          });
+                                      });
+                                          }
+                                  });
+                                  */
 
 //loads the selected categories from local storage
 /*
