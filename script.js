@@ -190,7 +190,7 @@ rightButton3.onclick = function () {
                             console.log(err);
                         }
                     });
-
+/*
                     //displays the modal that allows the user to add a specific interest to the category
                     selectedInterestsWrapper.addEventListener("click", function(event) {
                         if (event.target.classList.contains("addSpecific")) {
@@ -228,6 +228,7 @@ rightButton3.onclick = function () {
                         
                         }
                       });
+                      */
                         //adding an event listener for the delete buttons on the specific interests dynamically added to the site
                        /* else if (event.target.classList.contains("specificDelete")){
                             //ajax request that sends delete request to the server
@@ -289,6 +290,47 @@ rightButton3.onclick = function () {
             }
         });
     }
+
+const specificForm = document.getElementById("addSpecificForm");
+//displays the modal that allows the user to add a specific interest to the category
+                    selectedInterestsWrapper.addEventListener("click", function(event) {
+                        if (event.target.classList.contains("addSpecific")) {
+                          addSpecificInterest.style.display = "block";
+                          var addId = event.target.value;
+                          var addName = event.target.name;
+                          console.log(addId);
+                          console.log(addName);
+                      
+                          $("#addSpecificForm").submit(function(e) {
+                            e.preventDefault();
+                            let interestsId = addId;
+                            //var userId = $("input[name='userId']").val();
+                            let itemsTitle = addName;
+                            let itemsName = $("input[name='specificInterest']").val();
+                            console.log(interestsId);
+                            console.log(itemsTitle);
+                            console.log(itemsName);
+                            $.ajax({
+                                type: "POST",
+                                url: "http://localhost/datingSite/includes/addSpecificInc.php",
+                                data: {
+                                    interestsId: interestsId,
+                                    //userId: userId,
+                                    itemsTitle: itemsTitle,
+                                    itemsName: itemsName
+                                },
+                                success: function(data) {
+                                    console.log(data);
+                                    addSpecificInterest.style.display = "none";
+                                    specificForm.reset();
+                                }
+                            });
+                            return false;
+                        });
+                        
+                        }
+                      });
+
 
 //loads the selected categories from local storage
 /*
