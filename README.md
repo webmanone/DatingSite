@@ -48,9 +48,9 @@ Currently, only the login/signup system and profile creation screen works. There
  - Ability to search for other users based on matching interests.
  - Ability to chat with other users that you have matched with.
 
-## Why did I choose to create this project?
+## Motivation
 <p>
-The idea for this project first started when I was brainstorming for ideas of how to create a project that could tell hiring managers more about me and my interests.
+The idea for this project first started when I was brainstorming for ideas of how to create a project that could tell hiring managers more about me and my interests and show my ability to code.
 I first started thinking along the lines of an online resume/profile that showed my past experience and hobbies. 
 However, I wanted to create something that could potentially be used in real life and not just in an interview. 
 I also wanted to create something that had unlimited potential for adding new features and implementing new technologies. 
@@ -68,4 +68,3 @@ Therefore, the idea formed of a dating site where users can input not just the k
 I'd be creating something that allowed me to show my coding skills, my interests/hobbies and also potentially create something that might actually work in the real world in the future.
 </p>
 
-## TBC
