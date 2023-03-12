@@ -52,8 +52,7 @@ Currently, only the login/signup system and profile creation screen works. There
 <p>
 The idea for this project first started when I was brainstorming for ideas of how to create a project that could tell hiring managers more about me and my interests and show my ability to code.
 I first started thinking along the lines of an online resume/profile that showed my past experience and hobbies. 
-However, I wanted to create something that could potentially be used in real life and not just in an interview. 
-I also wanted to create something that had unlimited potential for adding new features and implementing new technologies. 
+However, I wanted to create something that could potentially be used in real life and not just in an interview, that had unlimited potential for adding new features and implementing new technologies. 
 </p> 
 <p>
 Around this time I went on a date with a girl, and whilst we were eating I couldn't stop thinking about an Anime "Chainsaw Man" that had just released. 
@@ -62,9 +61,9 @@ she might have been weirded out.
 </p>
 <p>
 After the date, I kept thinking how cool it would be if I could match with someone on a dating site that also watches Chainsaw Man.
-Therefore, the idea formed of a dating site where users can input not just the kind of things they like, but very specific interests, and then search for others with the same interests so they know about some things they have in common before they meet.
+Therefore, the idea formed of a dating site where users can input not just the kind of things they like, but their specific interests, and then search for others with the same interests so they know about some things they have in common before they meet.
 </p>
 <p>
-I'd be creating something that allowed me to show my coding skills, my interests/hobbies and also potentially create something that might actually work in the real world in the future.
+I'd be creating something that allowed me to show my coding skills, my interests/hobbies and also potentially create something that actually has potential to work in the real world.
 </p>
 
