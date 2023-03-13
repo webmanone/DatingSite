@@ -101,6 +101,7 @@ rightButton3.onclick = function () {
                     interestTitle.classList.add("interestTitle");
                     const interestMain = document.createElement("div");
                     interestMain.classList.add("interestMain");
+                    interestMain.setAttribute("id", selectedInterestsId);
                     const addInterest = document.createElement("button");
                     addInterest.classList.add("addSpecific");
                     addInterest.innerHTML = `+`;
@@ -229,7 +230,7 @@ const specificForm = document.getElementById("addSpecificForm");
                       
                           $("#addSpecificForm").submit(function(e) {
                             e.preventDefault();
-                            let interestsId = addId;
+                            var interestsId = addId;
                             //var userId = $("input[name='userId']").val();
                             let itemsTitle = addName;
                             let itemsName = $("input[name='specificInterest']").val();
@@ -249,13 +250,76 @@ const specificForm = document.getElementById("addSpecificForm");
                                     console.log(data);
                                     addSpecificInterest.style.display = "none";
                                     specificForm.reset();
+                
+                                    for (let i = 0; i < bioItems.length; i++) {
+                                        if(bioItems[i].classList.contains('active')){
+                                            $.ajax({
+                                                type: "GET",
+                                                url: "http://localhost/datingSite/includes/showSpecificInc.php",
+                                                data: {interestsId: interestsId},
+                                                success: function(data) {
+                                                    console.log(data);
+                                                    const parsedData = JSON.parse(data);
+                                                    for (let i=0; i < parsedData.length; i++){
+                                                        const interestMain = document.getElementById(interestsId);
+                                                        if (interestsId === interestMain.id) {
+                                                        const specificDiv = document.createElement("div");
+                                                        specificDiv.innerText = parsedData[i]['itemsName'];
+                                                        specificDiv.classList.add("specificDiv");
+
+                                                        interestMain.appendChild(specificDiv);
+                        
+                                                        const specificDelete = document.createElement("button");
+                                                        specificDelete.innerHTML = "&times";
+                                                        specificDelete.classList.add("specificDelete");
+                                                        specificDiv.appendChild(specificDelete);
+                        
+                                                        const specificDeleteValue = document.createElement("INPUT");
+                                                        specificDeleteValue.setAttribute("type", "hidden");
+                                                        specificDeleteValue.setAttribute("value", parsedData[i]['itemsId']);
+                                                        specificDiv.appendChild(specificDeleteValue);
+                        
+                                                        selectedInterestsWrapper.addEventListener("click", function(event) {
+                                                            if (event.target.classList.contains("specificDelete")){
+                                                                //ajax request that sends delete request to the server
+                                                                const specificDeleteValue = event.target.nextElementSibling.value;
+                                                                const specificDiv = event.target.parentElement;
+                                                                console.log(specificDeleteValue);
+                                                                console.log(specificDiv);
+                                                                $.ajax({
+                                                                    url: "http://localhost/datingSite/includes/deleteSpecificInc.php",
+                                                                    type: "DELETE",
+                                                                    //needs to be edited
+                                                                    data: JSON.stringify({itemsId: specificDeleteValue}),
+                                                                    contentType: "application/json",
+                                                                    success: function(data) {
+                                                                        console.log(data);
+                                                                        const parsedData = JSON.parse(data);
+                                                                        if (parsedData.status === "success") {
+                                                                            $(specificDiv).remove();
+                                                                        }
+                                                                    },
+                                                                    error: function(err) {
+                                                                        console.log(err);
+                                                                    }
+                                                                });
+                                                            }
+                                                        });
+                                                    }
+                                                }
+                                                },
+                                                error: function(err) {
+                                                    console.log(err);
+                                                }
+                                            });
+                                            
+                                        }
+                                    }
                                     interestsId = undefined;
                                     itemsTitle = undefined;
                                     itemsName = undefined;
                                     addId = undefined;
                                     addName = undefined;
-
-                                    
                                 }
                             });
                             return false;
