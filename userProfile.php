@@ -10,8 +10,18 @@
 
     <div class="about">
         
-        <div>
+        <div class="imageHolder">
+            <div>
+                <form action="includes/uploadPic.php" method="post" enctype="multipart/form-data">
+                    <label class="addPicLabel">+
+                    <input type="file" name="profilePic" class="addPic">
+                    </label>
+                </form>
+            </div>
+
+            <div>
             <img src="images/emptyProfile.png" class="bioPic">
+            </div>
         </div>
         
         <div class="bioGrid">
