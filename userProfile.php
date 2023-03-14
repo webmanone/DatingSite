@@ -12,7 +12,7 @@
         
         <div class="imageHolder">
             <div>
-                <form action="includes/uploadPic.php" method="post" enctype="multipart/form-data">
+                <form action="uploadPic.php" method="post" enctype="multipart/form-data">
                     <label class="addPicLabel">+
                     <input type="file" name="profilePic" class="addPic">
                     </label>
