@@ -514,7 +514,8 @@ input[type=password] {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  gap: 50px;
+  align-items: center;
+  gap: 100px;
 }
 
 .interestsWrapper {
@@ -938,9 +939,6 @@ h1 {
 .imageHolder{
   position: relative;
   width: 50%;
-  left: 50%;
-  transform: translateX(-50%);
-  top: -15px;
 }
 
 .addPic {
