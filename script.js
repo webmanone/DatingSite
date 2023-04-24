@@ -56,7 +56,8 @@ rightButton3.onclick = function () {
     const errorModal = document.getElementById("errorModal");
     const closeError = document.getElementsByClassName("closeModal")[2];
     const selectedInterestsWrapper = document.getElementById("selectedInterestsWrapper");
-
+    const addImg = document.getElementById("addImg");
+    const uploadImgBtn = document.getElementById("uploadImg")
     //displays a modal that allows the user to add an interest category to the div
     interestModalButton.addEventListener("click", () => {
         addInterestModal.style.display = "block";
@@ -64,6 +65,14 @@ rightButton3.onclick = function () {
     //closes the modal
     closeModal.addEventListener("click", () => {
         addInterestModal.style.display = "none";
+    });
+
+    addImg.addEventListener("click", () => {
+        uploadImgBtn.style.visibility = "visible";
+    });
+
+    uploadImgBtn.addEventListener("click", () => {
+        uploadImgBtn.style.visibility = "hidden";
     });
 
     //selects all interest categories as "bioItems" and sets how many are currently activated, starting at 0
