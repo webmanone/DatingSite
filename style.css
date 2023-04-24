@@ -957,3 +957,19 @@ h1 {
   z-index: 1;
   background-color: aqua;
 }
+
+.uploadHolder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.uploadImg {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  min-width: 100%;
+  top: 40px;
+  left: 3px;
+}

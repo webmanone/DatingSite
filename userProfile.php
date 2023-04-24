@@ -13,13 +13,16 @@
         <div class="imageHolder">
             <div>
                 <form action="uploadPic.php" method="post" enctype="multipart/form-data">
-                    <label class="addPicLabel">+
+                    <label class="addPicLabel" id="addImg">+
                     <input type="file" name="profilePic" class="addPic">
                     </label>
+                    <div class="uploadHolder">
+                        <button type="submit" name="submit" id="uploadImg" class="uploadImg">Upload</button>
+                    </div>
                 </form>
             </div>
 
-            <div>
+            <div id="imgLink">
             <img src="images/emptyProfile.png" class="bioPic">
             </div>
         </div>
