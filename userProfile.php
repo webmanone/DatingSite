@@ -21,12 +21,33 @@
                     </div>
                 </form>
             </div>
+<?php 
 
-            <div id="imgLink">
+$sql = "SELECT * FROM user";
+    $result = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)){
+           $id = $row['id'];
+           $sqlImg = "SELECT * FROM profilepic WHERE userid='$id'";
+           $resultImg = mysqli_query($conn, $sql);
+           while ($rowImg = mysqli_fetch_assoc($resultImg)){
+                echo "<div id="imgLink">";
+                    if ($rowImg['status' == 0]){
+                        echo "<img src="uploads/profile"$id ".jpg" class="bioPic">"
+                    } else {
+                       echo "<img src="images/emptyProfile.png" class="bioPic">"
+                    }
+                echo"</div>";
+           }
+        }
+    }
+
+?>
+      <!--     <div id="imgLink">
             <img src="images/emptyProfile.png" class="bioPic">
             </div>
         </div>
-        
+-->
         <div class="bioGrid">
             <div class="firstName aboutItem capitaliseFirst"><?php echo $_SESSION["userFirstname"]?></div>
             <div class="age aboutItem" id="userDob">
